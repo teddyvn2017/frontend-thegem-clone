@@ -1,5 +1,7 @@
 @import "tailwindcss";
 
 .active {
-  border:3px solid #222;
-}
+    /* border: 3px solid #222;	
+	outline-offset: 0 !important; */
+	/* đảm bảo border bên trong, để không làm tăng kích thước của menu Item */
+} 
