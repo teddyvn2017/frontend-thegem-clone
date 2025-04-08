@@ -82,8 +82,8 @@ const MenuItem: React.FC<MenuItemProps> = ({ href, children, isActive, subMenu }
             <motion.ul
                 className="absolute top-full left-0 bg-white shadow-md z-10 w-max min-w-[200px] 
                             pr-8 flex flex-col gap-2"
-                initial={{ opacity: 0, y: 10 }}
-                animate={{ opacity: isHovered ? 1 : 0, y: isHovered ? 0 : 10 }}
+                initial={{ opacity: 0, y: 10,visibility: 'hidden' }}
+                animate={{ opacity: isHovered ? 1 : 0, y: isHovered ? 0 : 10,visibility: isHovered ? 'visible' : 'hidden' }}
                 transition={{ duration: 0.2, ease: 'easeInOut' }} >
             {
                 subMenu.map((subItem) => (
