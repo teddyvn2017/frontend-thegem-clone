@@ -15,7 +15,7 @@ import Image from 'next/image';
 const Categories = () => {
   return (
     // Categories
-    <section className='w-full bg-white mt-8'>
+    <section className='w-full bg-white mt-2'>
         <div className='mx-auto px-8 lg:px-16 grid-cols-4 grid-rows-2 grid gap-[40px]'>
             
             {/* Ảnh 1: lớn chiếm 2 hàng, 2 cột */}
