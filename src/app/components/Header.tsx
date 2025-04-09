@@ -12,7 +12,7 @@ const Header = () => {
     <header className='w-full bg-white'>
 		
 		<div className='mx-auto px-16'>
-			<div className='border-b border-solid border-gray-400 flex flex-row justify-between items-center py-2.5'>
+			<div className='border-b border-solid border-gray-200 flex flex-row justify-between items-center py-2.5'>
 				<div className='flex flex-row gap-2 items-center text-sm text-gray-500'>
 					<i className='bx bx-time'></i>
 					<span> Working Hours: Mon - Sun / 9:00 AM - 8:00 PM</span>
@@ -83,7 +83,7 @@ const Header = () => {
 				<Image src={logo} alt="logo thegem" />
 			</Link>
 			<div className='flex flex-row gap-2 items-center'>
-				<input type="text" placeholder='Search' className='border-none px-4 py-2 focus:outline-none' />
+				<input type="text" placeholder='Search' className='border-none px-4 py-2 focus:outline-none text-sm' />
 				<Combobox />
 				<i className='bx bx-user w-6 h-6'></i>
 				<i className='bx bx-shopping-bag w-6 h-6' ></i>
