@@ -1,10 +1,16 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 
-const BurgerIcon = () => {
+interface BurgerIconProps { 
 
-    const [isOpen, setIsOpen] = useState(false);
-    const toggleOpen = () => setIsOpen(!isOpen);
+    isOpen: boolean;
+    toggleOpen: () => void;// Hoặc onClick: () => void; tùy theo tên prop truyền từ cha
+}
+
+const BurgerIcon:React.FC<BurgerIconProps> = ({ isOpen, toggleOpen}) => {
+
+    // const [isOpen, setIsOpen] = useState(false);
+    // const toggleOpen = () => setIsOpen(!isOpen);
     const lineVariants = {
         closed: { opacity: 1, rotate: 0, y: 0 ,transition: { duration: 0.2,ease: 'easeInOut' } },
         opened: (index:number) => ({
@@ -16,7 +22,7 @@ const BurgerIcon = () => {
       };
     return (
         <motion.button 
-            onClick={toggleOpen} 
+            onClick={toggleOpen}   // Sử dụng prop toggleOpen nhận từ cha
             className="md:hidden flex flex-col items-center justify-center gap-0.5 w-8 h-8 bg-transparent border-none" 
             aria-label={isOpen ? 'Đóng menu' : 'Mở menu'}>
                 {

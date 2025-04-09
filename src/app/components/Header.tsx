@@ -1,17 +1,39 @@
 'use client'
 
-import React from 'react';
+import React, {useState,useEffect } from 'react';
 import MenuItem from './MenuItem';
 import Link from 'next/link';
 import Image from 'next/image';
 import logo from '@/assets/img/logo.svg';
 import Combobox from './Combobox';
 import BurgerIcon from './BurgerIcon';
+import MenuMobile from './MenuMobileItems';
+import { head, header } from 'framer-motion/client';
+
 
 // import { UserCircleIcon,ShoppingBagIcon } from '@heroicons/react/20/solid';
 const Header = () => {
+
+	const headerRef = React.useRef<HTMLDivElement>(null);
+	const [headerHeight, setHeaderHeight] = useState(0);
+	const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+	const toggleMobileMenu = () => {
+		setIsMobileMenuOpen(!isMobileMenuOpen);
+	}
+
+	useEffect(() => {
+		if (headerRef.current) {
+			// setHeaderHeight(headerRef.current.offsetHeight);	
+			const height = headerRef.current.offsetHeight;
+      		setHeaderHeight(height);
+      		// console.log("Chiều cao của Header:", height);
+		}
+	},[])
+
   return (
-    <header className='w-full bg-white'>
+    <header 
+		ref = {headerRef}
+		className='w-full bg-white'>
 		
 		<div className='hidden lg:block mx-auto px-16'>
 			<div className='border-b border-solid border-gray-200 flex flex-row justify-between items-center py-2.5'>
@@ -91,8 +113,9 @@ const Header = () => {
 				<i className='bx bx-user w-6 h-6'></i>
 				<i className='bx bx-shopping-bag w-6 h-6' ></i>
 			</div>
-			<BurgerIcon />
+			<BurgerIcon isOpen={isMobileMenuOpen} toggleOpen={toggleMobileMenu}/>
         </nav>
+		<MenuMobile isOpen={isMobileMenuOpen} onClose={toggleMobileMenu} headerHeight={headerHeight} /> {/* Thêm component MobileMenu */}
     </header>
   )
 }
