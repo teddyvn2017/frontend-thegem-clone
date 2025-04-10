@@ -42,7 +42,7 @@ const Categories = () => {
                             grid grid-rows-2 gap-[40px] 
                             md:flex md:flex-row md:gap-[40px]
                             lg:flex lg:flex-row lg:gap-[40px]
-                            xl:grid xl:col-span-1 xl:grid-rows-2
+                            xl:grid xl:col-span-1 xl:row-span-2
                             relative min-h-[400px] max-h-[700px]'>
                 <div className='relative w-full h-full'>
                     <Image src={cate3_l} alt='image' fill className='object-cover' />
