@@ -1,67 +1,104 @@
-import React from 'react'
-import { motion, AnimatePresence, animate } from 'framer-motion';
-import { exit } from 'process';
+import React, { useState } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
 
 interface MenuItem {
-	label: string;
-	href: string;
-	subMenu?: MenuItem[];
+  title: string;
+  href: string;
+  subMenu?: MenuItem[];
 }
 
-// khai báo giao tiếp
 interface MenuMobileProps {
-    isOpen: boolean,
-    onClose: () => void,
+	isOpen: boolean;
+	onClose: () => void;
 	headerHeight: number;
 	menuItems?: MenuItem[];
 }
-const MenuMobile: React.FC<MenuMobileProps> = ({isOpen, onClose, headerHeight}) => {
 
-	const menuVariants =  {
-		initial: {x:"100%"},
-		animate: {x:"0"},
-		exit: {x:"100%"}
-	}
+const MenuMobile: React.FC<MenuMobileProps> = ({ isOpen, onClose, headerHeight, menuItems }) => {
+  	const menuVariants = {
+		initial: { x: "100%" }, // Di chuyển từ phải qua trái
+		animate: { x: "0" },
+		exit: { x: "100%" },
+  	};
 
-  	return (
-		<AnimatePresence>
-			{
-				isOpen && (
-					<motion.div 
-						className={`fixed top-${headerHeight} left-0 w-full h-screen bg-white z-50 px-8 py-8`}
-						variants={menuVariants}
-						initial="initial"
-						animate="animate"
-						exit="exit"
-						transition={{ type: "tween", duration: 0.5, ease: "easeInOut" }}
-					>
+  	const subMenuVariants = {
+		opened: { opacity: 1, height: "auto", transition: { duration: 0.3, ease: 'easeInOut' } },
+		closed: { opacity: 0, height: 0, transition: { duration: 0.3, ease: 'easeInOut' } }
+  	};
 
-						{/* Nút đóng menu
-						<button onClick={onClose} className="text-gray-400 hover:text-white mb-4 focus:outline-none">
-							Đóng
-						</button> */}
+  	const [openedSubMenu, setOpenedSubMenu] = useState<string[]>([]);
+  	const toggleSubMenu = (title: string) => {
+    console.log("toggleSubmenu được gọi với title:", title);
+    if (openedSubMenu.includes(title)) {
+      	console.log("Trước khi lọc (đóng submenu):", [...openedSubMenu]);
+      	setOpenedSubMenu(openedSubMenu.filter(item => item !== title));
+      	console.log("Sau khi lọc (đóng submenu):", [...openedSubMenu.filter(item => item !== title)]);
+    } else {
+      	setOpenedSubMenu([...openedSubMenu, title]);
+    }
+  };
 
-						<ul className="list-none p-0 m-0 w-full md:hidden uppercase">
-							<li className="py-2">
-								<a href="#" className="block text-lg hover:text-gray-300">Home</a>
-							</li>
-							<li className="py-2">
-								<a href="#" className="block text-lg hover:text-gray-300">Products</a>
+  return (
+    <AnimatePresence>
+      {
+	  	isOpen && (
+			<motion.div
+				className={`fixed top-${headerHeight} left-0 w-full h-screen bg-white z-50 px-8 py-8`}
+				variants={menuVariants}
+				initial="initial"
+				animate="animate"
+				exit="exit"
+				transition={{ type: "tween", duration: 0.5, ease: "easeInOut" }}
+			>
+          	<ul className="list-none p-0 m-0 w-full md:hidden uppercase"> {
+				menuItems?.map((item) => (
+              		<li key={item.title} className="py-2">
+						<div className="flex items-center justify-between">
+							<a href={item.href} className="block text-lg hover:text-gray-300">
+								{item.title}
+							</a>
+						{
+							item.subMenu && (
+								<button onClick={() => toggleSubMenu(item.title)} className="focus:outline-none">
+									{
+										openedSubMenu.includes(item.title) ? (<i className="bx bx-chevron-up text-2xl"></i>) : (<i className="bx bx-chevron-down text-2xl"></i>)
+									}
+								</button>
+							)
+						}
+						</div>
+						<AnimatePresence>
+						{
+							item.subMenu && openedSubMenu.includes(item.title) && (
+								<motion.ul
+									variants={subMenuVariants}
+									initial="closed"
+									animate="opened"
+									exit="closed"
+									className="list-none p-0 m-0 mt-2 pl-4"
+								>
+								{
+									item.subMenu.map((subItem) => (
+										<li key={subItem.title} className="py-2">
+											<a href={subItem.href} className="block text-md hover:text-gray-300">
+												{subItem.title}
+											</a>
+										</li>)
+									)
+								}
+								</motion.ul>
+							)
+						}
+						</AnimatePresence>
+              		</li>
+            		)
+				)}
+          	</ul>
+        
+        </motion.div>
+      )}
+    </AnimatePresence>
+  );
+};
 
-
-							</li>
-							<li className="py-2">
-								<a href="#" className="block text-lg hover:text-gray-300">Categories</a>
-							</li>
-							<li className="py-2">
-								<a href="#" className="block text-lg hover:text-gray-300">Blog</a>
-							</li>
-						</ul>
-					</motion.div>
-				)
-			}
-		</AnimatePresence>
-  	)
-}
-
-export default MenuMobile
+export default MenuMobile;

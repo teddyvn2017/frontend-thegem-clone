@@ -8,11 +8,25 @@ import logo from '@/assets/img/logo.svg';
 import Combobox from './Combobox';
 import BurgerIcon from './BurgerIcon';
 import MenuMobile from './MenuMobileItems';
-import { head, header } from 'framer-motion/client';
 
 
-// import { UserCircleIcon,ShoppingBagIcon } from '@heroicons/react/20/solid';
 const Header = () => {
+
+	const menuItems = [ // Định nghĩa trực tiếp hoặc import từ file
+		{ title: 'Home', href: '/' },
+		{
+		  title: 'Products',
+		  href: '/products',
+		  subMenu: [
+			{ title: 'All Products', href: '/products' },
+			{ title: 'New Arrivals', href: '/products/new' },
+			{ title: 'Featured', href: '/products/featured' },
+			{ title: 'Sale', href: '/products/sale' },
+		  ],
+		},
+		{ title: 'Categories', href: '/categories' },
+		{ title: 'Blog', href: '/blog' },		
+	  ];
 
 	const headerRef = React.useRef<HTMLDivElement>(null);
 	const [headerHeight, setHeaderHeight] = useState(0);
@@ -115,7 +129,12 @@ const Header = () => {
 			</div>
 			<BurgerIcon isOpen={isMobileMenuOpen} toggleOpen={toggleMobileMenu}/>
         </nav>
-		<MenuMobile isOpen={isMobileMenuOpen} onClose={toggleMobileMenu} headerHeight={headerHeight} /> {/* Thêm component MobileMenu */}
+		<MenuMobile 
+			isOpen={isMobileMenuOpen} 
+			onClose={toggleMobileMenu} 
+			headerHeight={headerHeight} 
+			menuItems={menuItems}
+		/> {/* Thêm component MobileMenu */}
     </header>
   )
 }
