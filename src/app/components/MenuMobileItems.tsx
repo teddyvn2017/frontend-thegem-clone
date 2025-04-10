@@ -2,11 +2,18 @@ import React from 'react'
 import { motion, AnimatePresence, animate } from 'framer-motion';
 import { exit } from 'process';
 
+interface MenuItem {
+	label: string;
+	href: string;
+	subMenu?: MenuItem[];
+}
+
 // khai báo giao tiếp
 interface MenuMobileProps {
     isOpen: boolean,
     onClose: () => void,
 	headerHeight: number;
+	menuItems?: MenuItem[];
 }
 const MenuMobile: React.FC<MenuMobileProps> = ({isOpen, onClose, headerHeight}) => {
 
@@ -34,18 +41,20 @@ const MenuMobile: React.FC<MenuMobileProps> = ({isOpen, onClose, headerHeight}) 
 							Đóng
 						</button> */}
 
-						<ul className="list-none p-0 m-0 w-full md:hidden">
+						<ul className="list-none p-0 m-0 w-full md:hidden uppercase">
 							<li className="py-2">
-								<a href="#" className="block text-lg hover:text-gray-300">Trang chủ</a>
+								<a href="#" className="block text-lg hover:text-gray-300">Home</a>
 							</li>
 							<li className="py-2">
-								<a href="#" className="block text-lg hover:text-gray-300">Sản phẩm</a>
+								<a href="#" className="block text-lg hover:text-gray-300">Products</a>
+
+
 							</li>
 							<li className="py-2">
-								<a href="#" className="block text-lg hover:text-gray-300">Dịch vụ</a>
+								<a href="#" className="block text-lg hover:text-gray-300">Categories</a>
 							</li>
 							<li className="py-2">
-								<a href="#" className="block text-lg hover:text-gray-300">Liên hệ</a>
+								<a href="#" className="block text-lg hover:text-gray-300">Blog</a>
 							</li>
 						</ul>
 					</motion.div>
