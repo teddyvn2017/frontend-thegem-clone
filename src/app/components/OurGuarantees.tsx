@@ -3,7 +3,7 @@ import React from 'react'
 const OurGuarantees = () => {
     return (
         <section className='w-full bg-white mt-16'>
-            <div className='mx-auto px-8 lg:px-16 flex flex-wrap items-center justify-between gap-8'>
+            <div className='mx-auto px-8 lg:px-16 flex flex-col md:flex-row flex-wrap items-center justify-between gap-8'>
                 {/* Item */}
                 <div className='flex flex-row items-center justify-center gap-4'>
                     <i className='bx bx-globe text-3xl'></i>
