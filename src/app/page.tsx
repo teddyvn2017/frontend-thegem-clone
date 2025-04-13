@@ -3,6 +3,7 @@ import Categories from './components/Categories';
 import OurGuarantees from './components/OurGuarantees';
 import Delivery from './components/Delivery';
 import Promotions from './components/Promotions';
+import SpecialPromotions from './components/SpecialPromotions';
 export default function HomePage() {
     return (
         <>
@@ -10,6 +11,7 @@ export default function HomePage() {
             <OurGuarantees />
             <Delivery />
             <Promotions />
+            <SpecialPromotions />
         </>
     );
 }

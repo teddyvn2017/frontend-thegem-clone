@@ -116,12 +116,14 @@ const Promotions = () => {
                                     hoverSrc={`/img/${product.image2}`} alt={product.name} 
                                     cate_name={product.category}
                                     originalPrice = {product.originalPrice ?? 0} 
-                                    discountedPrice = {product.discountedPrice ?? 0}                                                
+                                    discountedPrice = {product.discountedPrice ?? 0}
+                                    isNew = {product.isNew ?? false}                                        
                                     />) 
                             : (<ZoomImage key={product.id} src={`/img/${product.image}`} 
                                     alt={product.name} cate_name={product.category}
                                     originalPrice = {product.originalPrice ?? 0} 
                                     discountedPrice = {product.discountedPrice ?? 0}
+                                    isNew = {product.isNew ?? false}
                                 />)
                     ))
                }     
