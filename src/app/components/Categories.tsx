@@ -5,7 +5,7 @@ import cate3_l from '@/assets/img/cate3-l.jpg';
 import cate4_l from '@/assets/img/cate4-l.jpg';
 import Image from 'next/image';
 const Categories = () => {
-  return (
+      return (
     // Categories
     <section className='w-full bg-white lg:mt-2 mt-8'>
         <div className='mx-auto px-8 lg:px-16 grid-cols-4 grid-rows-2 grid gap-[40px]'>
