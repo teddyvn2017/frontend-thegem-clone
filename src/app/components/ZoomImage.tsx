@@ -1,21 +1,22 @@
 import React from 'react'
-
+// import 'boxicons'; 
 type ZoomImageProps = {
     src: string;
     cate_name:string;
     alt: string;
     originalPrice: number;
     discountedPrice: number;
-    isNew?: boolean
+    isNew?: boolean;
+    onLike?: () => void; // Optional function to handle like action
+    isLiked?: boolean; // Optional prop to indicate if the item is liked
 }
 
-const ZoomImage = ({src,alt,cate_name,originalPrice,discountedPrice,isNew}:ZoomImageProps) => {
+const ZoomImage = ({src,alt,cate_name,originalPrice,discountedPrice,isNew,onLike,isLiked}:ZoomImageProps) => {
 
     const discountPercentage = originalPrice > 0 ? Math.round(((originalPrice - discountedPrice) / originalPrice) * 100) : 0;
     const discountLabelStyle = {
         clipPath: 'polygon(0 0, 100% 0, 90% 100%, 0 100%)',
     }
-
 
     return (
         <>
@@ -32,6 +33,15 @@ const ZoomImage = ({src,alt,cate_name,originalPrice,discountedPrice,isNew}:ZoomI
                         </div>
                     )
                 }
+
+                {/* <div className='absolute top-2 right-2 z-10'>
+                    <button onClick={onLike} 
+                            className="heart-button cursor-pointer focus:outline-none"
+                            style={{ backgroundColor: 'transparent' }}     
+                        >
+                        <i className={`bx ${isLiked ? 'bxs-heart' : 'bx-heart'} bx-sm heart-icon font-light`} style={{ color: isLiked ? 'red' : '#222' }}></i>
+                    </button>
+                </div> */}
 
                 <img
                     src={src}

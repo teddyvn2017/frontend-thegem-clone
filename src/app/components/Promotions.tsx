@@ -27,30 +27,30 @@ const Promotions = () => {
     const [topSellers, setTopSellers] =useState<Product[]>([]);
     const [visibleProducts, setVisibleProducts] = useState<Product[]>([]);
 
-    useEffect(() => {
-        const fetchProducts = async () => {
-            try {
-                const rsOnSale = await fetch('/data/on_sale.json');
-                const onSaleData = await rsOnSale.json();                
-                setOnSaleProducts(onSaleData);
+        useEffect(() => {
+            const fetchProducts = async () => {
+                try {
+                    const rsOnSale = await fetch('/data/on_sale.json');
+                    const onSaleData = await rsOnSale.json();                
+                    setOnSaleProducts(onSaleData);
 
-                const rsFeatured = await fetch('/data/featured.json');
-                const featuredData = await rsFeatured.json();
-                setFeaturedProducts(featuredData);
+                    const rsFeatured = await fetch('/data/featured.json');
+                    const featuredData = await rsFeatured.json();
+                    setFeaturedProducts(featuredData);
 
-                const rsTopSellers = await fetch('/data/top_sellers.json');
-                const topSellersData = await rsTopSellers.json();
-                setTopSellers(topSellersData);
+                    const rsTopSellers = await fetch('/data/top_sellers.json');
+                    const topSellersData = await rsTopSellers.json();
+                    setTopSellers(topSellersData);
 
-                setVisibleProducts(onSaleData);
+                    setVisibleProducts(onSaleData);
+                }
+                catch (error) {
+                    console.error('Lỗi khi đọc file JSON:', error);
+                }
             }
-            catch (error) {
-                console.error('Lỗi khi đọc file JSON:', error);
-            }
-        }
 
-        fetchProducts();
-    }, []);
+            fetchProducts();
+        }, []);
 
     const handleTabClick = (tab:string) => {
         setActiveTab(tab);
@@ -117,7 +117,7 @@ const Promotions = () => {
                                     cate_name={product.category}
                                     originalPrice = {product.originalPrice ?? 0} 
                                     discountedPrice = {product.discountedPrice ?? 0}
-                                    isNew = {product.isNew ?? false}                                        
+                                    isNew = {product.isNew ?? false}
                                     />) 
                             : (<ZoomImage key={product.id} src={`/img/${product.image}`} 
                                     alt={product.name} cate_name={product.category}

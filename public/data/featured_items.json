@@ -1,0 +1,46 @@
+[
+    {
+        "id": 1,
+        "name": "Petiolate Celery",
+        "category": "Featured Daily Deals",
+        "originalPrice": 23.34,    
+        "discountedPrice": 0,
+        "image": "petiolate_celery1.jpg",
+        "image2": "petiolate_celery2.jpg",
+        "hoverEffect": "changeImage",
+        "isNew": false
+    },
+    {
+        "id": 2,
+        "name": "Red Chili Pepper",
+        "category": "Featured Daily Deals",
+        "originalPrice": 23.99,   
+        "discountedPrice": 0, 
+        "image": "chili1.jpg",
+        "image2": "chili2.jpg",
+        "hoverEffect": "changeImage",
+        "isNew": false
+    },
+    {
+        "id": 3,
+        "name": "Ripe Banana",
+        "category": "Featured Daily Deals",
+        "originalPrice":13.75,   
+        "discountedPrice":9.99, 
+        "image": "banana1.jpg",
+        "image2": "banana2.jpg",
+        "hoverEffect": "changeImage",
+        "isNew":true
+    },
+    {
+        "id": 4,
+        "name": "French Baguette",
+        "category": "Featured Daily Deals",
+        "originalPrice": 5.29,
+        "discountedPrice": 0,   
+        "image": "baguette1.jpg",
+        "image2": "baguette2.jpg",
+        "hoverEffect": "changeImage",
+        "isNew": false
+    }
+]
