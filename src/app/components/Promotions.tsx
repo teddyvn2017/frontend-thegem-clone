@@ -27,30 +27,30 @@ const Promotions = () => {
     const [topSellers, setTopSellers] =useState<Product[]>([]);
     const [visibleProducts, setVisibleProducts] = useState<Product[]>([]);
 
-        useEffect(() => {
-            const fetchProducts = async () => {
-                try {
-                    const rsOnSale = await fetch('/data/on_sale.json');
-                    const onSaleData = await rsOnSale.json();                
-                    setOnSaleProducts(onSaleData);
+    useEffect(() => {
+        const fetchProducts = async () => {
+            try {
+                const rsOnSale = await fetch('/data/on_sale.json');
+                const onSaleData = await rsOnSale.json();                
+                setOnSaleProducts(onSaleData);
 
-                    const rsFeatured = await fetch('/data/featured.json');
-                    const featuredData = await rsFeatured.json();
-                    setFeaturedProducts(featuredData);
+                const rsFeatured = await fetch('/data/featured.json');
+                const featuredData = await rsFeatured.json();
+                setFeaturedProducts(featuredData);
 
-                    const rsTopSellers = await fetch('/data/top_sellers.json');
-                    const topSellersData = await rsTopSellers.json();
-                    setTopSellers(topSellersData);
+                const rsTopSellers = await fetch('/data/top_sellers.json');
+                const topSellersData = await rsTopSellers.json();
+                setTopSellers(topSellersData);
 
-                    setVisibleProducts(onSaleData);
-                }
-                catch (error) {
-                    console.error('Lỗi khi đọc file JSON:', error);
-                }
+                setVisibleProducts(onSaleData);
             }
+            catch (error) {
+                console.error('Lỗi khi đọc file JSON:', error);
+            }
+        }
 
-            fetchProducts();
-        }, []);
+        fetchProducts();
+    }, []);
 
     const handleTabClick = (tab:string) => {
         setActiveTab(tab);
@@ -74,7 +74,7 @@ const Promotions = () => {
 
 
     return (
-        <section className='w-full mt-12 lg:mt-16'>
+        <section className='w-full mt-12 lg:mt-16 clear-both'>
             <div className='mx-auto px-8 lg:px-16 flex flex-col items-center justify-between gap-1'>
                 <h3 className='text-xl text-gray-500'>Offers this week</h3>
                 <h2 className='text-2xl lg:text-3xl text-[#222] font-semibold text-center'>Discount and Promotion</h2>
@@ -106,25 +106,22 @@ const Promotions = () => {
             </div>
            
            {/* Hiển thị danh sách sản phẩm */}
-           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 gap-4 mt-4
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 gap-4 mt-4
                            mx-auto px-8 lg:px16 items-center justify-center">
                 {
                     visibleProducts.map((product) => (
-
                         product.hoverEffect === 'changeImage' && product.image2 ? (
                             <HoverChangeImage key={product.id} src={`/img/${product.image}`} 
                                     hoverSrc={`/img/${product.image2}`} alt={product.name} 
                                     cate_name={product.category}
                                     originalPrice = {product.originalPrice ?? 0} 
                                     discountedPrice = {product.discountedPrice ?? 0}
-                                    isNew = {product.isNew ?? false}
-                                    />) 
+                                    isNew = {product.isNew ?? false} />) 
                             : (<ZoomImage key={product.id} src={`/img/${product.image}`} 
                                     alt={product.name} cate_name={product.category}
                                     originalPrice = {product.originalPrice ?? 0} 
                                     discountedPrice = {product.discountedPrice ?? 0}
-                                    isNew = {product.isNew ?? false}
-                                />)
+                                    isNew = {product.isNew ?? false} />)
                     ))
                }     
            </div>
