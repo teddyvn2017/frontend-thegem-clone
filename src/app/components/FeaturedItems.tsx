@@ -37,9 +37,11 @@ const FeaturedItems = () => {
     }, []);
     return (
         <section className='w-full mt-8 bg-white'>
-            <div className='flex flex-col xl:flex-row mx-auto px-8 lg:px16'>
+            <div className='flex flex-col xl:flex-row mx-auto px-8 lg:px-16'>
                 <div className='flex flex-col lg:flex lg:flex-row items-center justify-center flex-1/2'>
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 xl:grid-cols-2 gap-4 mt-4 items-center justify-center">
+                    <div 
+                        className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 
+                                    xl:grid-cols-2 gap-4 mt-4 items-center justify-center">
                         {
                             featuredItems.map((item) => (
                                 <HoverChangeImage key={item.id} src={`/img/${item.image}`} 
@@ -54,7 +56,7 @@ const FeaturedItems = () => {
                     </div>      
                 </div>
                 <div className='flex flex-col items-center justify-center flex-1/2'>
-                    <img src="./img/woman.jpg" alt="woman" className='w-auto'    />
+                    <img src="./img/woman.jpg" alt="woman" className='w-full h-full object-cover' />
                 </div>
             </div>
         </section>

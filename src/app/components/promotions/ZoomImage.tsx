@@ -13,10 +13,10 @@ const ZoomImage = ({src,alt,cate_name,originalPrice,discountedPrice,isNew}:ZoomI
 
     const discountPercentage = originalPrice > 0 ? Math.round(((originalPrice - discountedPrice) / originalPrice) * 100) : 0;
     const discountLabelStyle = {
-        clipPath: 'polygon(0 0, 100% 0, 90% 100%, 0 100%)',
+        clipPath: 'polygon(0 0, 100% 0, 90% 100%, 0 100%)', 
     }
 
-
+    const formatPrice = (price: number) => `$${price.toFixed(2)}`;
     return (
         <>
             <div className='relative flex flex-col items-center'>
@@ -32,7 +32,6 @@ const ZoomImage = ({src,alt,cate_name,originalPrice,discountedPrice,isNew}:ZoomI
                         </div>
                     )
                 }
-
                 <img
                     src={src}
                     alt={alt}
@@ -42,8 +41,16 @@ const ZoomImage = ({src,alt,cate_name,originalPrice,discountedPrice,isNew}:ZoomI
                     <h4 className="text-[12px] lg:text-sm font-normal text-center text-gray-400 row-span-1">{cate_name}</h4>
                     <h3 className="text-sm lg:text-base font-normal text-center row-span-1">{alt}</h3>
                     <div className="flex flex-row gap-1 justify-center items-center">
-                        <h4 className="text-[12px] lg:text-sm font-normal text-center text-gray-400 line-through">{originalPrice}</h4>
-                        <h4 className="text-[12px] lg:text-sm font-normal text-center text-[#222]">{discountedPrice}</h4>
+                        <h4 className={`text-[12px] lg:text-sm font-normal text-center text-gray-400 ${discountedPrice > 0 ? 'line-through' : ''}`}>
+                            {formatPrice(originalPrice)}
+                        </h4>
+                        {
+                            discountedPrice > 0 && (
+                                <h4 className="text-[12px] lg:text-sm font-normal text-center text-[#222]">
+                                    {formatPrice(discountedPrice)}
+                                </h4>
+                            )
+                        }                       
                     </div>  
                 </div>
             </div>            
@@ -51,4 +58,4 @@ const ZoomImage = ({src,alt,cate_name,originalPrice,discountedPrice,isNew}:ZoomI
       );
 }
 
-export default ZoomImage    
+export default ZoomImage

@@ -1,0 +1,55 @@
+[
+    {
+      "id": 1,
+      "name": "Canned Teauna",
+      "category": "Other",
+      "originalPrice": 26.45,
+      "discountedPrice": 23.49,
+      "discountPercent": 13,
+      "image": "canned-tuna.jpg",
+      "image2": "",
+      "hoverEffect": "zoom",
+      "tag": "onsale",
+      "isNew": false
+    },
+    {
+      "id": 2,
+      "name": "Dutch Cheese",
+      "category": "Cheese, Eggs",
+      "originalPrice": 6.99,
+	  "maxPrice": 19.99,
+      "discountedPrice":0,
+      "discountPercent": 3,
+      "image": "dutch-cheese.jpg",
+      "image2": "",
+      "hoverEffect": "zoom",
+      "tag": "",
+      "isNew": false
+    },
+    {
+      "id": 3,
+      "name": "Rose Beer",
+      "category": "Wine, Beer",
+      "originalPrice": 5.99,
+      "discountedPrice": 0,
+      "discountPercent": 8,
+      "image": "rose-beer.jpg",
+      "hoverEffect": "changeImage",
+      "image2": "rose-beer-hover.jpg",
+      "tag": "onsale",
+      "isNew": false
+    },
+    {
+      "id": 4,
+      "name": "Green Tea",
+      "category": "Other",
+      "originalPrice": 15.63,
+      "discountedPrice": 13.99,
+      "discountPercent": 10,
+      "image": "green-tea.jpg",
+      "image2": "",
+      "hoverEffect": "zoom",
+      "tag": "onsale",
+      "isNew": false
+    }    
+  ]

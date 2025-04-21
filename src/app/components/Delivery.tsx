@@ -9,7 +9,7 @@ const Delivery = () => {
                             lg:flex-row 
                             lg:relative'>
                 <Image src={delivery} alt="Delivery" 
-                        className='max-h-[400px] min-h-[240px] px-8 z-0 object-cover w-full' />
+                        className='max-h-[400px] min-h-[240px] px-8 lg:px-16 z-0 object-cover w-full' />
                 <div className='flex flex-col items-start justify-center
                                 pl-8 md:w-1/2 h-full
                                 lg:absolute lg:right-0 lg:top-0                                 

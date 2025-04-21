@@ -14,16 +14,18 @@ type HoverChangeImageProps = {
         clipPath: 'polygon(0 0, 100% 0, 90% 100%, 0 100%)',
       };
 
+	const formatPrice = (price: number) => `$${price.toFixed(2)}`;
+
     return (
       	<div className="relative flex flex-col items-center bg-white cursor-pointer overflow-hidden group">
-			{discountPercentage > 0 && (
+			{discountedPrice > 0 && (
                     <div className="absolute top-2 left-2 bg-amber-200 text-black text-xs py-0.5 px-4 z-10" style={discountLabelStyle}>
                         -{discountPercentage}%
                     </div>
                 )}
 			{	
 				isNew && (
-					<div className="absolute top-8 left-2 bg-[#899d81] text-white text-xs  py-0.5 px-2 z-10" style={discountLabelStyle}>
+					<div className="absolute top-8 left-2 bg-[#899d81] text-white text-xs  py-0.5 px-[13px] z-10" style={discountLabelStyle}>
 						NEW
 					</div>
 				)
@@ -42,8 +44,18 @@ type HoverChangeImageProps = {
             <h4 className="row-span-1 text-[12px] lg:text-sm font-normal text-center text-gray-400">{cate_name}</h4>
             <h3 className="row-span-1 text-sm lg:text-base font-normal text-center">{alt}</h3>
             <div className="row-span-1 flex flex-row gap-1 justify-center items-center">
-                <h4 className="text-[12px] lg:text-sm font-normal text-center text-gray-400 line-through">{originalPrice}</h4>
-                <h4 className="text-[12px] lg:text-sm font-normal text-center text-[#222]">{discountedPrice}</h4>
+				
+                <h4 className={`text-[12px] lg:text-sm font-normal text-center text-gray-400 ${discountedPrice > 0 ? 'line-through' : ''}`}>
+					{formatPrice(originalPrice)}
+				</h4>
+                {
+					discountedPrice > 0 && (
+						<h4 
+							className="text-[12px] lg:text-sm font-normal text-center text-[#222]">
+							{formatPrice(discountedPrice)}
+						</h4>
+					)
+				}
             </div>  
         </div>
         

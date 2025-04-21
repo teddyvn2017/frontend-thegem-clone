@@ -1,8 +1,11 @@
 'use client'
 import { useState,useEffect} from 'react';
-import ZoomImage from './ZoomImage';
-import HoverChangeImage from './HoverChangeImage';
+import ZoomImage from './promotions/ZoomImage';
+import HoverChangeImage from './promotions/HoverChangeImage';
 
+
+// import HoverChangeImage from './new_products/HoverChangeImage';
+// import ZoomImage from './new_products/ZoomImage';
 interface Product {
     id: number;
     name: string;
@@ -107,10 +110,10 @@ const Promotions = () => {
            
            {/* Hiển thị danh sách sản phẩm */}
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 gap-4 mt-4
-                           mx-auto px-8 lg:px16 items-center justify-center">
+                           mx-auto px-8 lg:px-16 items-center justify-center">
                 {
                     visibleProducts.map((product) => (
-                        product.hoverEffect === 'changeImage' && product.image2 ? (
+                        product.hoverEffect === '   ' && product.image2 ? (
                             <HoverChangeImage key={product.id} src={`/img/${product.image}`} 
                                     hoverSrc={`/img/${product.image2}`} alt={product.name} 
                                     cate_name={product.category}

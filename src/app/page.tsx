@@ -5,6 +5,8 @@ import Delivery from './components/Delivery';
 import Promotions from './components/Promotions';
 import SpecialPromotions from './components/SpecialPromotions';
 import FeaturedItems from './components/FeaturedItems';
+import BuyOnline from './components/BuyOnline';
+import NewProducts from './components/NewProducts';
 export default function HomePage() {
     return (
         <>
@@ -14,6 +16,8 @@ export default function HomePage() {
             <Promotions />
             <SpecialPromotions />
             <FeaturedItems />
+            <BuyOnline />
+            <NewProducts />
         </>
     );
 }

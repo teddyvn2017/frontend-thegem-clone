@@ -41,6 +41,6 @@
         "image": "baguette1.jpg",
         "image2": "baguette2.jpg",
         "hoverEffect": "changeImage",
-        "isNew": false
-    }
+        "isNew": false        
+    }    
 ]

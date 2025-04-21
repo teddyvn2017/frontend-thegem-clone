@@ -12,13 +12,15 @@
     "@heroicons/react": "^2.2.0",
     "bootstrap-icons": "^1.11.3",
     "boxicons": "^2.1.4",
-    "framer-motion": "^12.6.3",
+    "framer-motion": "^12.7.2",
     "gsap": "^3.12.7",
     "next": "15.2.4",
     "postcss": "^8.5.3",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
-    "split-type": "^0.3.4"
+    "split-type": "^0.3.4",
+    "swiper": "^11.2.6",
+    "swiper-react": "^1.0.0"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3",
