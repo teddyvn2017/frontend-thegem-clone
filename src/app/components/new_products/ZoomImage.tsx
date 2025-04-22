@@ -7,10 +7,11 @@ type ZoomImageProps = {
     originalPrice: number;
     maxPrice?: number;
     discountedPrice: number;
-    isNew?: boolean
+    isNew?: boolean;
+    tag: string;
 }
 
-const ZoomImage = ({src,alt,cate_name,originalPrice,maxPrice,discountedPrice,isNew}:ZoomImageProps) => {
+const ZoomImage = ({src,alt,cate_name,originalPrice,maxPrice,discountedPrice, isNew, tag}:ZoomImageProps) => {
 
     const discountPercentage = originalPrice > 0 ? Math.round(((originalPrice - discountedPrice) / originalPrice) * 100) : 0;
     const discountLabelStyle = {
@@ -21,18 +22,9 @@ const ZoomImage = ({src,alt,cate_name,originalPrice,maxPrice,discountedPrice,isN
     return (
         <>
             <div className='relative flex flex-col items-center'>
-                {discountPercentage > 0 && (
-                    <div className="absolute top-2 left-0 bg-amber-200 text-black text-xs py-0.5 px-4 z-10" style={discountLabelStyle}>
-                        -{discountPercentage}%
-                    </div>
-                )}
-                {
-                    isNew && (
-                        <div className="absolute top-2 right-2 bg-[#899d81] text-white text-xs font-bold py-0.5 px-2 rounded-sm z-10">
-                            NEW
-                        </div>
-                    )
-                }
+                <div className="absolute top-4 left-0 bg-amber-200 text-[#222] text-xs  py-0.5 px-[13px] z-10 uppercase" style={discountLabelStyle}>
+					{tag}
+				</div>
                 <img
                     src={src}
                     alt={alt}

@@ -1,3 +1,6 @@
+import { AiOutlineHeart } from "react-icons/ai";
+import { BsBag } from "react-icons/bs";
+
 type HoverChangeImageProps = {
     src: string;
     hoverSrc: string;
@@ -5,10 +8,11 @@ type HoverChangeImageProps = {
     alt: string;
     originalPrice: number;
     discountedPrice: number;
-    isNew?: boolean
+    isNew?: boolean;
+	tag?:string;
   };
   
-  const HoverChangeImage = ({ src, hoverSrc,cate_name, alt, originalPrice, discountedPrice,isNew }: HoverChangeImageProps) => {
+  const HoverChangeImage = ({ src, hoverSrc,cate_name, alt, originalPrice, discountedPrice,isNew,tag }: HoverChangeImageProps) => {
     const discountPercentage = originalPrice > 0 ? Math.round(((originalPrice - discountedPrice) / originalPrice) * 100) : 0;
     const discountLabelStyle = {
         clipPath: 'polygon(0 0, 100% 0, 90% 100%, 0 100%)',
@@ -18,6 +22,27 @@ type HoverChangeImageProps = {
 
     return (
       	<div className="relative flex flex-col items-center bg-white cursor-pointer overflow-hidden group">
+			<div className="flex flex-row justify-center gap-2">
+				<div className="absolute top-4 left-0 bg-amber-200 text-[#222] text-xs  py-0.5 px-[13px] z-10 uppercase" style={discountLabelStyle}>
+					{tag}
+				</div>
+				<div className="absolute top-4 right-4 z-10 rounded-full w-8 h-8
+								bg-white flex flex-col items-center justify-center
+								opacity-0 group-hover:opacity-100
+								hover:bg-[#222] transition-colors duration-300 cursor-pointer">
+					<AiOutlineHeart className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 
+												text-normal z-10 text-[#222] hover:text-white transition-colors duration-300" />
+
+				</div>
+				<div className="absolute top-4 right-14 z-10 rounded-full w-8 h-8
+								bg-white flex flex-col items-center justify-center
+								opacity-0 group-hover:opacity-100
+									hover:bg-[#222] transition-colors duration-300 cursor-pointer">
+					<BsBag className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 
+												text-normal z-10 text-[#222] hover:text-white transition-colors duration-300" />
+
+				</div>
+			</div>
 			{discountedPrice > 0 && (
                     <div className="absolute top-2 left-0 bg-amber-200 text-black text-xs py-0.5 px-4 z-10" style={discountLabelStyle}>
                         -{discountPercentage}%

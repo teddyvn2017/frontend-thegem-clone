@@ -58,6 +58,7 @@ const NewProducts = () => {
                                     originalPrice={p.originalPrice ?? 0  }
                                     discountedPrice={p.discountedPrice ?? 0}
                                     isNew={p.isNew ?? false}
+                                    tag={p.tag}
                                     />
                             )
                             : (
@@ -71,6 +72,7 @@ const NewProducts = () => {
                                     maxPrice = {p.maxPrice ?? 0}    
                                     discountedPrice={p.discountedPrice ?? 0}
                                     isNew={p.isNew ?? false}
+                                    tag={p.tag}
                                     />
                                 ) 
                         )
