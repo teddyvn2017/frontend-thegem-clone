@@ -44,7 +44,7 @@ const NewProducts = () => {
 			</div>
 			{/* wrapper */}
 
-			<div className='flex flex-col md:flex-row flex-wrap items-center justify-center mt-8    '>
+			<div className='flex flex-col md:flex-row flex-wrap items-center justify-center mt-8'>
                 {
                     newProducts.map((p) => (
                             p.hoverEffect == 'changeImage' && p.image2 ? 

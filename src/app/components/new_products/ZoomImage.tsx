@@ -1,5 +1,5 @@
 import React from 'react'
-
+import { AiOutlineHeart } from "react-icons/ai";
 type ZoomImageProps = {
     src: string;
     cate_name:string;

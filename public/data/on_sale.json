@@ -131,10 +131,10 @@
   },
   {
     "id": 11,
-    "name": "Yellow Smoothie",
+    "name": "Fruit Syrup",
     "category": "Other",
-    "originalPrice": 8.99,
-    "discountedPrice": 7.99,
+    "originalPrice": 16.85,
+    "discountedPrice": 14.99,
     "discountPercent": 11,
     "image": "yellow-smoothie.jpg",
     "image2": "",

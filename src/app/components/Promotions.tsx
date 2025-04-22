@@ -113,7 +113,7 @@ const Promotions = () => {
                            mx-auto px-8 lg:px-16 items-center justify-center">
                 {
                     visibleProducts.map((product) => (
-                        product.hoverEffect === '   ' && product.image2 ? (
+                        product.hoverEffect === 'changeImage' && product.image2 ? (
                             <HoverChangeImage key={product.id} src={`/img/${product.image}`} 
                                     hoverSrc={`/img/${product.image2}`} alt={product.name} 
                                     cate_name={product.category}

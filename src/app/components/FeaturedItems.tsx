@@ -1,8 +1,8 @@
 'use client'
 import React from 'react'
 import { useState,useEffect} from 'react';
-import HoverChangeImage from './HoverChangeImage';
-
+// import HoverChangeImage from './HoverChangeImage';
+import HoverChangeImage from './promotions/HoverChangeImage';
 interface FeaturedItem {
     id: number;
     name: string;

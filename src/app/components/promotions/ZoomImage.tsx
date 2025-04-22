@@ -19,7 +19,7 @@ const ZoomImage = ({src,alt,cate_name,originalPrice,discountedPrice,isNew}:ZoomI
     const formatPrice = (price: number) => `$${price.toFixed(2)}`;
     return (
         <>
-            <div className='relative flex flex-col items-center'>
+            <div className='relative flex flex-col items-center group'>
                 {discountPercentage > 0 && (
                     <div className="absolute top-2 left-2 bg-amber-200 text-black text-xs py-0.5 px-4 z-10" style={discountLabelStyle}>
                         -{discountPercentage}%
@@ -27,7 +27,7 @@ const ZoomImage = ({src,alt,cate_name,originalPrice,discountedPrice,isNew}:ZoomI
                 )}
                 {
                     isNew && (
-                        <div className="absolute top-2 right-2 bg-[#899d81] text-white text-xs font-bold py-0.5 px-2 rounded-sm z-10">
+                        <div className="absolute top-8 left-2 bg-[#899d81] text-white text-xs font-normal py-0.5 px-2 z-10" style={discountLabelStyle}>
                             NEW
                         </div>
                     )
