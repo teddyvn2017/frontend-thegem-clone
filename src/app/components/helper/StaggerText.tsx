@@ -33,7 +33,7 @@ const StaggerText = ({ text, className }: { text: string; className?: string }) 
       initial="hidden"
       whileInView="visible"
       viewport={{ once: false, amount: 0.6 }}
-    >
+    > 
       {text.split('').map((char, index) => (
         <motion.span
 			key={index}

@@ -1,6 +1,8 @@
 import { AiOutlineHeart } from "react-icons/ai";
 import { BsBag } from "react-icons/bs";
-import { LazyLoadImage } from "react-lazy-load-image-component";
+// import { LazyLoadImage } from "react-lazy-load-image-component";
+// import Image from 'next/image';
+
 type HoverChangeImageProps = {
     src: string;
     hoverSrc: string;
@@ -19,7 +21,7 @@ type HoverChangeImageProps = {
       };
 
 	const formatPrice = (price: number) => `$${price.toFixed(2)}`;
-	console.log('tag:', JSON.stringify(tag));  
+	// console.log('tag:', JSON.stringify(tag));  
     return (
       	<div className="relative flex flex-col items-center bg-white cursor-pointer overflow-hidden group">
 			<div>
@@ -49,15 +51,16 @@ type HoverChangeImageProps = {
 				</div>
 			</div>
 			
-			<img
+			<img	
 				src={src}
-				alt={alt}
-				className="object-cover mb-2 max-h-[280px] lg:max-h-[300px] transition-opacity duration-600 opacity-100 group-hover:opacity-0"
+				alt={alt}								
+				className="w-full object-cover mb-2 max-h-[280px] lg:max-h-[300px] 
+							transition-opacity duration-600 opacity-100 group-hover:opacity-0"
 			/>
 			<img
 				src={hoverSrc}
 				alt={`${alt} Hover`}
-				className="absolute top-0 left-1/2 -translate-x-1/2 object-cover mb-2 max-h-[280px] lg:max-h-[300px] transition-opacity duration-600 opacity-0 group-hover:opacity-100"
+				className="w-full absolute top-0 left-1/2 -translate-x-1/2 object-cover mb-2 max-h-[280px] lg:max-h-[300px] transition-opacity duration-600 opacity-0 group-hover:opacity-100"
 			/>
 
 

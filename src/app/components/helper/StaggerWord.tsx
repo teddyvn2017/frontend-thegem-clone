@@ -37,7 +37,7 @@ const StaggerWord: React.FC<StaggerWordProps> = ({ text, className }) => {
         variants={containerWords}
         initial="hidden"
         whileInView="visible"
-        viewport={{ once: false, amount: 0.6 }}
+        viewport={{ once: false, amount: 0.6 }} 
     >
       {text.split(' ').map((word, index) => (
         <motion.span

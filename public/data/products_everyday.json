@@ -71,5 +71,17 @@
       "hoverEffect": "zoom",
       "tag": "on sale",
       "isNew": false
-    } 
+    },
+	{
+		"id": 7,
+		"name": "Sunflower Oil",
+		"category": "Other",
+		"originalPrice": 12.87,
+		"discountedPrice": 9.99,
+		"image": "sunflower-oil.jpg",
+		"image2": "",
+		"hoverEffect": "zoom",
+		"tag": "on sale",
+		"isNew": false
+	} 
   ]

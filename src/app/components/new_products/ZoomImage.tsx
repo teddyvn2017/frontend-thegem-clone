@@ -1,6 +1,7 @@
 import React from 'react'
 import { AiOutlineHeart } from "react-icons/ai";
 import { BsBag } from "react-icons/bs";
+// import Image from 'next/image';
 type ZoomImageProps = {
     src: string;
     cate_name:string;
@@ -52,7 +53,9 @@ const ZoomImage = ({src,alt,cate_name,originalPrice,maxPrice,discountedPrice, is
                 <img
                     src={src}
                     alt={alt}
-                    className="object-cover mb-2 max-h-[280px] lg:max-h-[300px] transition-transform duration-300 hover:scale-110 cursor-pointer"
+                    // layout="fill"
+                    className="w-full h-full max-w-[280px] object-cover mb-2 max-h-[280px] 
+                                lg:max-h-[300px] transition-transform duration-300 hover:scale-110 cursor-pointer"
                 />            
                 <div className="grid grid-rows-[auto_auto_auto] items-center justify-start gap-1 pt-2 w-full">
                     <h4 className="text-[12px] lg:text-sm font-normal text-left 
