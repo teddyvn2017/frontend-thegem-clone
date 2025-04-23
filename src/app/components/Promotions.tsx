@@ -109,8 +109,8 @@ const Promotions = () => {
             </div>
            
            {/* Hiển thị danh sách sản phẩm */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 gap-4 mt-4
-                           mx-auto px-8 lg:px-16 items-center justify-center">
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 gap-8 
+                            mt-8 mb-8 mx-auto px-8 lg:px-16 items-center justify-center">
                 {
                     visibleProducts.map((product) => (
                         product.hoverEffect === 'changeImage' && product.image2 ? (

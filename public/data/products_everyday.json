@@ -4,12 +4,11 @@
       "name": "Canned Teauna",
       "category": "Other",
       "originalPrice": 26.45,
-      "discountedPrice": 23.49,
-      "discountPercent": 13,
+      "discountedPrice": 23.49,      
       "image": "canned-tuna.jpg",
       "image2": "",
       "hoverEffect": "zoom",
-      "tag": "onsale",
+      "tag": "on sale",
       "isNew": false
     },
     {
@@ -17,9 +16,8 @@
       "name": "Dutch Cheese",
       "category": "Cheese, Eggs",
       "originalPrice": 6.99,
-	  "maxPrice": 19.99,
+	    "maxPrice": 19.99,
       "discountedPrice":0,
-      "discountPercent": 3,
       "image": "dutch-cheese.jpg",
       "image2": "",
       "hoverEffect": "zoom",
@@ -32,11 +30,10 @@
       "category": "Wine, Beer",
       "originalPrice": 5.99,
       "discountedPrice": 0,
-      "discountPercent": 8,
       "image": "rose-beer.jpg",
       "hoverEffect": "changeImage",
       "image2": "rose-beer-hover.jpg",
-      "tag": "onsale",
+      "tag": "on sale",
       "isNew": false
     },
     {
@@ -45,11 +42,34 @@
       "category": "Other",
       "originalPrice": 15.63,
       "discountedPrice": 13.99,
-      "discountPercent": 10,
       "image": "green-tea.jpg",
       "image2": "",
       "hoverEffect": "zoom",
-      "tag": "onsale",
+      "tag": "on sale",
       "isNew": false
-    }    
+    },    
+    {
+      "id": 5,
+      "name": "Lime Green",
+      "category": "Vegetables, Fruits",
+      "originalPrice": 16.09,
+      "discountedPrice": 14.89,
+      "image": "lime-green.jpg",
+      "image2": "lime-green-hover.jpg",
+      "hoverEffect": "changeImage",
+      "tag": "on sale",
+      "isNew": false
+    },
+    {
+      "id": 6,
+      "name": "Mango Lemonade",
+      "category": "Vegetables, Fruits",
+      "originalPrice": 5.35,
+      "discountedPrice": 4.89,
+      "image": "mango-lemonade.jpg",
+      "image2": "",
+      "hoverEffect": "zoom",
+      "tag": "on sale",
+      "isNew": false
+    } 
   ]

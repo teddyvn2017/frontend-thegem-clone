@@ -33,7 +33,7 @@ interface StaggerWordProps {
 const StaggerWord: React.FC<StaggerWordProps> = ({ text, className }) => {
   return (
     <motion.div
-        className={`flex flex-wrap gap-2 ${className}`}
+        className={`flex flex-wrap gap-0 ${className}`}
         variants={containerWords}
         initial="hidden"
         whileInView="visible"

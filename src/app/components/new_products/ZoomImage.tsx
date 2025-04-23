@@ -1,5 +1,6 @@
 import React from 'react'
 import { AiOutlineHeart } from "react-icons/ai";
+import { BsBag } from "react-icons/bs";
 type ZoomImageProps = {
     src: string;
     cate_name:string;
@@ -8,7 +9,7 @@ type ZoomImageProps = {
     maxPrice?: number;
     discountedPrice: number;
     isNew?: boolean;
-    tag: string;
+    tag: string;    
 }
 
 const ZoomImage = ({src,alt,cate_name,originalPrice,maxPrice,discountedPrice, isNew, tag}:ZoomImageProps) => {
@@ -21,10 +22,33 @@ const ZoomImage = ({src,alt,cate_name,originalPrice,maxPrice,discountedPrice, is
     const formatPrice = (price: number) => `$${price.toFixed(2)}`;
     return (
         <>
-            <div className='relative flex flex-col items-center'>
-                <div className="absolute top-4 left-0 bg-amber-200 text-[#222] text-xs  py-0.5 px-[13px] z-10 uppercase" style={discountLabelStyle}>
-					{tag}
-				</div>
+            <div className='relative flex flex-col items-center group'>
+                <div>
+                    {					
+                        tag?.trim() && (
+                            <div className="absolute top-4 left-0 bg-amber-200 text-[#222] text-xs  py-0.5 px-[13px] z-10 uppercase" style={discountLabelStyle}>
+                                {tag}
+                            </div>
+                        )
+                    }                                    
+                    <div className="absolute top-4 right-4 z-10 rounded-full w-8 h-8
+                                    bg-white flex flex-col items-center justify-center
+                                    opacity-0 group-hover:opacity-100
+                                    hover:bg-[#222] transition-colors duration-300 cursor-pointer">
+                        <AiOutlineHeart className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 
+                                                    text-normal text-[#222] hover:text-white transition-colors 
+                                                    duration-300 z-20" />
+
+                    </div>
+                    <div className="absolute top-4 right-12 z-10 rounded-full w-8 h-8
+                                    bg-white flex flex-col items-center justify-center
+                                    opacity-0 group-hover:opacity-100
+                                        hover:bg-[#222] transition-colors duration-300 cursor-pointer">
+                        <BsBag className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 
+                                            text-normal z-20 text-[#222] hover:text-white transition-colors 
+                                            duration-300" />
+                    </div>
+                </div>
                 <img
                     src={src}
                     alt={alt}
@@ -36,7 +60,7 @@ const ZoomImage = ({src,alt,cate_name,originalPrice,maxPrice,discountedPrice, is
                         {cate_name}
                     </h4>
                     <h3 className="text-sm lg:text-base font-normal text-left row-span-1">{alt}</h3>
-                    <div className="flex flex-row gap-1 justify-center items-center">
+                    <div className="flex flex-row gap-1 justify-start items-center">
                         {
                             (typeof maxPrice === 'number' && maxPrice > 0 && discountedPrice === 0) ? (
                                 <h4 className="text-[12px] lg:text-sm font-normal text-gray-400">

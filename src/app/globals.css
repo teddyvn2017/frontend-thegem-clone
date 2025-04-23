@@ -1,1 +1,28 @@
 @import "tailwindcss";
+
+.swiper-container-custom {
+    position: relative; /* Để định vị tuyệt đối cho các nút */
+}
+  
+.custom-swiper-button-prev,
+.custom-swiper-button-next {
+    position: absolute;
+    top: 50%;
+    z-index: 10;
+    transform: translateY(-50%);
+    opacity: 0; /* Ẩn mặc định nếu muốn hiển thị khi hover */
+    transition: opacity 0.3s ease-in-out;
+}
+  
+.swiper-container-custom:hover .custom-swiper-button-prev,
+.swiper-container-custom:hover .custom-swiper-button-next {
+    opacity: 1; /* Hiển thị khi hover */
+}
+  
+.custom-swiper-button-prev {
+    left: 48px;
+}
+  
+.custom-swiper-button-next {
+    right: 48px;
+}

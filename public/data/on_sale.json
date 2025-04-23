@@ -88,7 +88,7 @@
     "image2": "pineapple-hover.jpg",
     "hoverEffect": "changeImage",
     "isNew": false,
-    "tag": "onsale"
+    "tag": "on sale"
   },
   {
     "id": 8,
@@ -100,7 +100,7 @@
     "image": "red-wine.jpg",
     "image2": "red-wine-hover.jpg",
     "hoverEffect": "changeImage",
-    "tag": "onsale",
+    "tag": "on sale",
     "isNew": false
   },
   {
@@ -113,7 +113,7 @@
     "image": "cooking-oil.jpg",
     "image2": "",
     "hoverEffect": "zoom",
-    "tag": "onsale",
+    "tag": "on sale",
     "isNew": false
   },
   {
@@ -126,7 +126,7 @@
     "image": "white-mushroom.jpg",
     "image2": "white-mushroom-hover.jpg",
     "hoverEffect": "changeImage",
-    "tag": "onsale",
+    "tag": "on sale",
     "isNew": false
   },
   {

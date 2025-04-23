@@ -37,7 +37,7 @@ const FeaturedItems = () => {
     }, []);
     return (
         <section className='w-full mt-8 bg-white'>
-            <div className='flex flex-col xl:flex-row mx-auto px-8 lg:px-16'>
+            <div className='flex flex-col xl:flex-row mx-auto px-8 lg:px-16 gap-8'>
                 <div className='flex flex-col lg:flex lg:flex-row items-center justify-center flex-1/2'>
                     <div 
                         className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 
