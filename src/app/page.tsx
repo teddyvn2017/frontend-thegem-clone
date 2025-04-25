@@ -7,6 +7,7 @@ import SpecialPromotions from './components/SpecialPromotions';
 import FeaturedItems from './components/FeaturedItems';
 import BuyOnline from './components/BuyOnline';
 import NewProducts from './components/NewProducts';
+import Subscribe from './components/Subscribe';
 export default function HomePage() {
     return (
         <>
@@ -18,6 +19,7 @@ export default function HomePage() {
             <FeaturedItems />
             <BuyOnline />
             <NewProducts />
+            <Subscribe  />
         </>
     );
 }

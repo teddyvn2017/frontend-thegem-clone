@@ -46,8 +46,8 @@ const ZoomImage = ({src,alt,cate_name,originalPrice,maxPrice,discountedPrice, is
                                     opacity-0 group-hover:opacity-100
                                         hover:bg-[#222] transition-colors duration-300 cursor-pointer">
                         <BsBag className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 
-                                            text-normal z-20 text-[#222] hover:text-white transition-colors 
-                                            duration-300" />
+                                        text-normal z-20 text-[#222] hover:text-white transition-colors 
+                                        duration-300" />
                     </div>
                 </div>
                 <img

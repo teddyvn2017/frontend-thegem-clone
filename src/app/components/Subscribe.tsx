@@ -1,0 +1,46 @@
+import React from 'react'
+
+const Subscribe = () => {
+  return (
+    <section className='mt-10'>
+        <div className='flex flex-col lg:flex-row gap-8 lg:gap-10 items-stretch justify-center mx-auto 
+            px-8 lg:px-16 min-h-[400px] lg:min-h-[640px]'>
+            {/* Block 1 */}
+            <div className='h-full bg-[#ffe6b1] lg:w-[40%] px-8 py-8 min-h-[400px] lg:min-h-[640px] flex flex-col items-center justify-center'>
+
+                <div className='flex flex-col gap-2'>
+                    {/* Content */}              
+                        <h4 className='text-base text-[#222] font-light'>Newsletter</h4>
+                        <h2 className='text-3xl md:text-4xl font-semibold text-[#222]'>Keep up to Date</h2>
+                        <h2 className='text-3xl md:text-4xl font-semibold text-[#222]'>With Our Special</h2>
+                        <h2 className='text-3xl md:text-4xl font-semibold text-[#222]'>Sales</h2>
+                        <p className='mt-4 text-base'>Subscribe to our newsletter and get 10% off your first purchase</p>
+                        <input type="text" placeholder='Email address' 
+                            className='px-4 py-2 border-0 border-b-1 border-[#222] bg-transparent text-base
+                                    focus:outline-none focus:ring-0 focus:border-black' />
+                        <button className='bg-[#222] text-white px-4 py-2 rounded-full w-fit text-sm mt-4'>
+                            Subscribe Now
+                        </button>
+                </div>
+            </div>
+
+            {/* Block 2 */}
+
+            <div className='relative lg:w-[60%]'>
+                <img src="/img/subscribe.jpg" className='w-full h-full object-cover object-center'
+                    alt="subscribe" />
+                <div className='absolute -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2 flex flex-col gap-2 z-10 w-max'>
+                    <h2 className='text-3xl lg:text-5xl 2xl:text-8xl font-semibold text-[#222]'>30% OFF</h2>
+                    <div className='flex flex-col gap-2 text-2xl text-[#222] text-center mt-2'>
+                        <h3>Enjoy 30% off Your First Order</h3>
+                        <h3>when You Join our Mailing List!</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+  )
+}
+
+export default Subscribe

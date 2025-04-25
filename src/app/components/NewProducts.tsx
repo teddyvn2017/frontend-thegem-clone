@@ -43,12 +43,7 @@ interface FeaturedItem {
 
 const NewProducts = () => {
 
-	const [newProducts, setNewProducts] = useState<FeaturedItem[]>([]);
-    const [mounted, setMounted] = useState(false);
-
-    useEffect(() => {
-        setMounted(true);
-      }, []);
+	const [newProducts, setNewProducts] = useState<FeaturedItem[]>([]);    
 
     useEffect(() => {
         const fetchProducts = async () => {
@@ -77,14 +72,14 @@ const NewProducts = () => {
                 
                     <Swiper            
                         // lưu ý phải có w-full
-                        className='swiper-wrapper w-full' 
+                        className='swiper-wrapper w-full overflow-hidden' 
                         modules={[Navigation, Autoplay]}                    
                         loop={true}
                         spaceBetween={30} 
-                            autoplay={{
-                                delay: 2000,
-                                disableOnInteraction: false,
-                            }}
+                        // autoplay={{
+                        //     delay: 2000,
+                        //     disableOnInteraction: false,
+                        // }}
                         navigation={{
                             nextEl: '.custom-swiper-button-next',
                             prevEl: '.custom-swiper-button-prev',
