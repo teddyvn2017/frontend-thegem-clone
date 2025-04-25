@@ -8,6 +8,7 @@ import FeaturedItems from './components/FeaturedItems';
 import BuyOnline from './components/BuyOnline';
 import NewProducts from './components/NewProducts';
 import Subscribe from './components/Subscribe';
+import LatestNews from './components/LatestNews';
 export default function HomePage() {
     return (
         <>
@@ -20,6 +21,7 @@ export default function HomePage() {
             <BuyOnline />
             <NewProducts />
             <Subscribe  />
+            <LatestNews />
         </>
     );
 }
