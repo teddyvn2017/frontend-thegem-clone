@@ -72,14 +72,14 @@ const LatestNews = () => {
                 </div>   
 
                 {/*View All  */}
-                <div className='w-full flex items-center justify-center mt-10'>
+                <div className='w-full flex items-center justify-center mt-10 lg:mt-20'>
                     <hr className="border-t border-gray-200 w-full" />
                     <button className='bg-[#222] text-white px-5 py-2 text-base rounded-full w-fit 
                                 min-w-[140px] cursor-pointer hover:bg-gray-500 hover:text-gray-200 transition duration-300'>
                         View All
-                    </button>
+                    </button>   
                     <hr className="border-t border-gray-200 w-full" />
-                </div>
+                </div>  
             </div>
         </section>
     )
