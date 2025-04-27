@@ -20,6 +20,20 @@ const LatestNews = () => {
         );
     }
 
+    const containerVariants = { 
+        hidden: {},
+        show: {
+            transition: {
+                staggerChildren: 0.2,
+            }
+        }
+    }
+
+    const itemVariants = {
+        hidden: { opacity: 0, y: 60 },
+        show: { opacity: 1, y: 0, transition: { duration: 0.8, ease: 'easeOut' } },
+    }
+
     const handleMouseLeave = () => {
         setIsHovered(false);
         controls.start(
@@ -33,7 +47,6 @@ const LatestNews = () => {
         );
     }
 
-
     return (
         <section className='w-full mt-8 lg:mt-10'>
             {/* Wrapper */}
@@ -43,33 +56,47 @@ const LatestNews = () => {
                     <h2 className='text-2xl md:text-3xl lg:text-4xl font-semibold'>Latest News from Blog</h2>
                 </div>
                 {/* Content */}
-                <div className="w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 
-                                gap-10 mt-4 items-center justify-center">                
+                {/* variants={containerVariants} gắn animation cho container. */}
+                <motion.div
+                    variants={containerVariants}
+                    initial="hidden"
+                    whileInView="show"
+                    viewport={{ once: true, amount: 0.2 }}
+                    className="w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 
+                            gap-10 mt-4 items-center justify-center">
                     {/* item */}
-                    <NewsItem 
-                        src='/img/latest-news-1.jpg' 
-                        date='14/12/2022' 
-                        title='10 Suprising Health Benefits of Garlic' 
-                        desc='Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore dolore.'/>
-                    
-                    <NewsItem 
-                        src='/img/latest-news-2.jpg' 
-                        date='14/12/2022' 
-                        title='6 Essential Nutrients That you Need' 
-                        desc='Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore dolore.'/>
+                    <motion.div variants={itemVariants}>
+                        <NewsItem 
+                            src='/img/latest-news-1.jpg' 
+                            date='14/12/2022' 
+                            title='10 Suprising Health Benefits of Garlic' 
+                            desc='Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore dolore.'/>
+                    </motion.div>
 
-                    <NewsItem 
-                        src='/img/latest-news-3.jpg' 
-                        date='14/12/2022' 
-                        title='5 Fun Ways to Involve Kids in the Kitchen' 
-                        desc='Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore dolore.'/>
+                    <motion.div variants={itemVariants}>
+                        <NewsItem 
+                            src='/img/latest-news-2.jpg' 
+                            date='14/12/2022' 
+                            title='6 Essential Nutrients That you Need' 
+                            desc='Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore dolore.'/>
+                    </motion.div>
                     
-                    <NewsItem 
-                        src='/img/latest-news-4.jpg' 
-                        date='14/12/2022' 
-                        title='10 Surprising Health Benefits of Avocado' 
-                        desc='Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore dolore.'/>
-                </div>   
+                    <motion.div variants={itemVariants}>
+                        <NewsItem 
+                            src='/img/latest-news-3.jpg' 
+                            date='14/12/2022' 
+                            title='5 Fun Ways to Involve Kids in the Kitchen' 
+                            desc='Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore dolore.'/>
+                    </motion.div>
+                    
+                    <motion.div variants={itemVariants}>
+                        <NewsItem 
+                            src='/img/latest-news-4.jpg' 
+                            date='14/12/2022' 
+                            title='10 Surprising Health Benefits of Avocado' 
+                            desc='Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore dolore.'/>
+                    </motion.div>
+                </motion.div>   
 
                 {/*View All  */}
                 <div className='w-full flex items-center justify-center mt-10 lg:mt-20'>
