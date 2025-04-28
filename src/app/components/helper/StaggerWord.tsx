@@ -26,8 +26,8 @@ const wordAnimation = {
 };
 
 interface StaggerWordProps {
-  text: string;
-  className?: string;
+	text: string;
+	className?: string;
 }
 
 const StaggerWord: React.FC<StaggerWordProps> = ({ text, className }) => {
@@ -40,14 +40,14 @@ const StaggerWord: React.FC<StaggerWordProps> = ({ text, className }) => {
         viewport={{ once: false, amount: 0.6 }} 
     >
       {text.split(' ').map((word, index) => (
-        <motion.span
-            key={index}
-            variants={wordAnimation}
-            className={className}
-        >
-            {word}
-        </motion.span>
-      ))}
+			<motion.span
+				key={index}
+				variants={wordAnimation}
+				className={className}
+			>
+				{word}&nbsp;
+			</motion.span>
+		))}	
     </motion.div>
   );
 };

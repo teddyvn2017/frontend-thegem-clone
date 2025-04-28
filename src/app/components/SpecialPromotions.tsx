@@ -1,15 +1,13 @@
 'use client'
 
-import React from 'react'
-import Image from 'next/image'
-import sp1 from '@/assets/img/special-promotion1.jpg'
-import sp2 from '@/assets/img/special-promotion2.jpg'
-import { motion } from 'framer-motion'
+import React from 'react';
+import Image from 'next/image';
+import sp1 from '@/assets/img/special-promotion1.jpg';
+import sp2 from '@/assets/img/special-promotion2.jpg';
+import { motion } from 'framer-motion';
 import StaggerText from './helper/StaggerText';
 import StaggerWord from './helper/StaggerWord';
 import MaskRevealWord from './helper/MaskRevealWord';
-import WordSlideInContainer from './helper/WordSlideInContainer';
-
 
 const fadeUp = {
   hidden: { opacity: 0, y: 50 },
@@ -61,13 +59,13 @@ const SpecialPromotions = () => {
   return (
     <section className='w-full mt-10'>
       	<div className='mx-auto px-8 lg:px-16 grid grid-cols-1 lg:grid-cols-2 gap-10'>
-        {/* Block 1 - "50% Off" */}
+        	{/* Block 1 - "50% Off" */}
 			<motion.div
-			className='relative h-full w-full'
-			initial="hidden"
-			whileInView="visible"
-			viewport={{ once: true, amount: 0.4 }}
-			transition={{ staggerChildren: 0.2 }}
+				className='relative h-full w-full'
+				initial="hidden"
+				whileInView="visible"
+				viewport={{ once: true, amount: 0.4 }}
+				transition={{ staggerChildren: 0.2 }}
 			>
 				<Image src={sp1} alt="image" className="object-cover min-h-[400px]" />
 				<div className='absolute top-1/2 -translate-y-1/2 left-0 lg:left-6 flex flex-col gap-2'>
@@ -98,14 +96,18 @@ const SpecialPromotions = () => {
 				</div>
 			</motion.div>
 
-        {/* Block 2 */}
-			<div className="relative h-full w-full">
+        	{/* Block 2 */}
+			<motion.div 
+				className="relative h-full w-full"
+				initial="hidden"
+				whileInView="visible"
+				viewport={{ once: true, amount: 0.4 }}
+				transition={{ staggerChildren: 0.2 }}
+			>
 				<Image src={sp2} alt="image" className="object-cover min-h-[400px]" />
 
 				<div
-					className="absolute top-1/2 -translate-y-1/2 left-8 lg:left-8 flex flex-col gap-2 overflow-hidden"
-				
-				>
+					className="absolute top-1/2 -translate-y-1/2 left-8 lg:left-8 flex flex-col gap-2 overflow-hidden">
 					<motion.h3
 						className="text-white text-wrap text-2xl md:text-4xl leading-6 lg:leading-10 overflow-hidden"
 						initial={{ opacity: 0 }}
@@ -130,8 +132,7 @@ const SpecialPromotions = () => {
 						animate={{ x: 0, opacity: 1 }} // Di chuyển vào vị trí ban đầu và hiển thị
 						transition={{ duration: 0.6, ease: "easeOut" }} // Điều chỉnh duration nếu cần
 					>
-						<MaskRevealWord text="Lorem ipsum dolor sit amet consectetur!" />
-						
+						<MaskRevealWord text="Lorem ipsum dolor sit amet consectetur!" />						
 					</motion.h4>
 
 					<motion.button
@@ -142,8 +143,8 @@ const SpecialPromotions = () => {
 					>
 						Shop Now
 					</motion.button>
-				</div>
-			</div>
+				</div>	
+			</motion.div>
       	</div>
     </section>
   )
