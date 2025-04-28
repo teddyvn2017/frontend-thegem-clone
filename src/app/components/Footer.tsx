@@ -1,6 +1,6 @@
 import React from 'react';
 import Image from 'next/image';
-import { RiFacebookFill, RiFacebookLine, RiInstagramLine, RiTwitterLine, RiVisaFill } from "react-icons/ri";
+import { RiFacebookLine, RiInstagramLine, RiTwitterLine, RiVisaFill } from "react-icons/ri";
 import { FaCcMastercard, FaCcPaypal  } from "react-icons/fa";
 import logo_trang from '@/assets/img/logo_trang.svg';
 const Footer = () => {
@@ -100,9 +100,15 @@ const Footer = () => {
 					<div className='flex flex-col md:flex-row justify-between items-center py-4 gap-4'>
 						<p className='text-sm text-[#999]'>© 2023 Thegem. All rights reserved.</p>
 						<div className='flex flex-row gap-4'>
-							<RiFacebookLine className='text-xl text-white'/>
-							<RiTwitterLine className='text-xl text-white'/>
-							<RiInstagramLine className='text-xl text-white'/>
+							<a href="#">
+								<RiFacebookLine className='text-xl text-white'/>
+							</a>
+							<a href="#">
+								<RiTwitterLine className='text-xl text-white'/>
+							</a>
+							<a href="#">
+								<RiInstagramLine className='text-xl text-white'/>
+							</a>
 						</div>
 					</div>		
 				</div>
