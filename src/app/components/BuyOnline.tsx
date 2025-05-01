@@ -2,7 +2,6 @@
 import React from 'react';
 import { motion } from 'framer-motion'; 
 import MaskRevealWord from './helper/MaskRevealWord';
-import StaggerWord from './helper/StaggerWord';
 import WordsSlideUp from './helper/WordsSlideUp';
 
 const BuyOnline = () => {
@@ -16,8 +15,7 @@ const BuyOnline = () => {
                             <MaskRevealWord  text="Category" />
                     </motion.h3>
                     <div className='flex flex-col text-[#222] gap-2 lg:gap-4 w-[80%] lg:w-[45%]'>
-                        <motion.h2 className='text-[#222] font-semibold text-2xl lg:text-4xl leading-normal'>
-                            {/* <StaggerWord text="Buy now Online! See What is Being Bought The Most." />*/}
+                        <motion.h2 className='text-[#222] font-semibold text-2xl lg:text-4xl leading-normal'>                           
                             <WordsSlideUp text='Buy now Online! See What is Being Bought The Most.' className='' />
                         </motion.h2>                       
                         <motion.h4 className='text-base lg:text-xl text-[#222]'>
