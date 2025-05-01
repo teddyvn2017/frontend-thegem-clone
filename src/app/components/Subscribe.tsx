@@ -41,18 +41,16 @@ const Subscribe = () => {
             <div className='relative lg:w-[60%]'>
                 <img src="/img/subscribe.jpg" className='w-full h-full min-h-[360px] object-cover object-center'
                     alt="subscribe" />
-                <div className='absolute -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2 flex flex-col gap-2 z-10 w-fit md:w-max'>
-                    <LettersSlideUp text="30% OFF" className="text-3xl md:text-5xl 2xl:text-8xl font-semibold text-[#222] text-center" />
-                    {/* <h2 className='text-3xl md:text-5xl 2xl:text-8xl font-semibold text-[#222] text-center'>30% OFF</h2> */}
+                <div className='absolute -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2 
+                                flex flex-col gap-2 z-10 w-fit md:w-max items-center'>
+                    <LettersSlideUp text="30% OFF" className="text-4xl md:text-5xl 2xl:text-8xl font-semibold text-[#222] 
+                            w-max text-center" />
                     <div className='flex flex-col gap-2 text-2xl text-[#222] text-center mt-2 flex-wrap'>
-                        <h3 className='text-wrap max-w-[400px]  '>
+                        <h3 className='text-wrap max-w-[400px] text-base md:text-2xl'>
                             <LettersScaleOut text="Enjoy 30% off Your First Order when You Join our Mailing List!"                                
                                 className='' />                            
                         </h3>
-                        
-                        {/* <h3 className='text-wrap w-fit'>
-                            <LettersScaleOut text="when You Join our Mailing List!" className='' />  
-                        </h3> */}
+                                               
                     </div>
                 </div>
             </div>
