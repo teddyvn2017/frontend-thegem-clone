@@ -9,6 +9,7 @@
       "image": "butter_buns01.jpg",
       "image2": "butter_buns02.jpg",
       "hoverEffect": "changeImage",
+	  "isNew": true,
       "tag": "featured"
     },
     {
@@ -20,7 +21,8 @@
       "discountPercent": 3,
       "image": "spanish-oranges.jpg",
       "image2": "spanish-oranges-hover.jpg",
-      "hoverEffect": "changeImage",      
+      "hoverEffect": "changeImage", 
+	  "isNew": true,     
       "tag": "featured"
     },
     {
@@ -30,8 +32,10 @@
       "originalPrice": 6.49,
       "discountedPrice": 5.49,
       "discountPercent": 8,
-      "image": "juicy-pineapple",
-      "hoverEffect": "zoom",
+      "image": "juicy-pineapple.jpg",
+	  "image2": "juicy-pineapple-hover.jpg",
+      "hoverEffect": "changeImage",
+	  "isNew": true,
       "tag": "featured"
     },
     {
@@ -41,9 +45,10 @@
       "originalPrice": 37.44,
       "discountedPrice": 0,
       "discountPercent": 10,
-      "image": "green-tea.png",
-      "hoverEffect": "changeImage",
-      "hoverImage": "green-tea-hover.png",
+      "image": "gouda-cheese.jpg",
+	  "image2": "gouda-cheese-hover.jpg",
+      "hoverEffect": "changeImage",      
+	  "isNew": true,
       "tag": "new"
     },
     {
@@ -53,8 +58,10 @@
       "originalPrice": 9.99,
       "discountedPrice": 0,
       "discountPercent": 13,	
-      "image": "lager-beer.png",
-      "hoverEffect": "zoom",
+      "image": "green-craft-beer.jpg",
+	  "image2": "green-craft-beer-hover.jpg",
+      "hoverEffect": "changeImage",
+	  "isNew": true,
       "tag": "featured"
     },
     {
@@ -64,8 +71,9 @@
       "originalPrice": 13.99,
       "discountedPrice": 0,
       "discountPercent": 21,
-      "image": "spanish-oranges.png",
-      "hoverEffect": "zoom",
+      "image": "red-apple.jpg",
+      "image2": "red-apple-hover.jpg",
+      "hoverEffect": "changeImage",
       "isNew": true,
       "tag": "featured"
     },
@@ -76,9 +84,9 @@
       "originalPrice": 35.99,
       "discountedPrice":29.99,
       "discountPercent": 7,
-      "image": "pineapple.png",
+      "image": "ripe-blueberry.jpg",
+      "image2": "ripe-blueberry-hover.jpg",
       "hoverEffect": "changeImage",
-      "hoverImage": "pineapple-hover.png",
       "isNew": true,
       "tag": "featured"
     },
@@ -89,8 +97,10 @@
       "originalPrice": 1.99,
       "discountedPrice": 0,
       "discountPercent": 13,
-      "image": "red-wine.png",
-      "hoverEffect": "zoom",
+      "image": "ruddy-bagels.jpg",
+      "image2": "ruddy-bagels-hover.jpg",
+      "hoverEffect": "changeImage",
+      "isNew": true,
       "tag": "featured"
     },
     {
@@ -100,8 +110,10 @@
       "originalPrice": 4.12,
       "discountedPrice": 0,
       "discountPercent": 22,
-      "image": "cooking-oil.png",
-      "hoverEffect": "zoom",
+      "image": "rye-crispbread.jpg",
+      "image2": "rye-crispbread-hover.jpg",
+      "hoverEffect": "changeImage",
+      "isNew": true,
       "tag": "featured"
     },
     {
@@ -111,8 +123,10 @@
       "originalPrice": 1.78,
       "discountedPrice": 0,
       "discountPercent": 10,
-      "image": "white-mushroom.png",
-      "hoverEffect": "zoom",
+      "image": "salted-crackers.jpg",
+      "image2": "salted-crackers-hover.jpg",
+      "hoverEffect": "changeImage",
+      "isNew": true,
       "tag": "featured"
     },
     {
@@ -122,9 +136,10 @@
       "originalPrice": 6.49,
       "discountedPrice": 0,
       "discountPercent": 11,
-      "image": "yellow-smoothie.png",
+      "image": "tiger-beer.jpg",
+      "image2": "tiger-beer-hover.jpg",
       "hoverEffect": "changeImage",
-      "hoverImage": "yellow-smoothie-hover.png",
+      "isNew": true,     
       "tag": "featured"
     },
     {
@@ -134,8 +149,10 @@
       "originalPrice": 13.99,
       "discountedPrice": 9.99,
       "discountPercent": 12,
-      "image": "tinned-fish.png",
-      "hoverEffect": "zoom",
+      "image": "ripe-banana.jpg",
+      "image2": "ripe-banana-hover.jpg",
+      "hoverEffect": "changeImage",
+      "isNew": true,  
       "tag": "featured"	
     }
   ]

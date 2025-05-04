@@ -81,30 +81,6 @@ const Promotions = () => {
         }       
     },[activeTab, onSaleProducts, featuredProducts, topSellers]);
 
-    // const handleTabClick = (tab:string) => {
-    //     setActiveTab(tab);
-    //     localStorage.setItem('activeTab', tab); // lưu lại tab
-
-    //     switch (tab) {
-    //         case 'tab-on-sale': 
-    //             setVisibleProducts(onSaleProducts);
-    //             setImgFolder('tab-on-sale');
-    //             break;
-    //         case 'tab-featured':
-    //             setVisibleProducts(featuredProducts);
-    //             setImgFolder('tab-featured');
-    //             break;
-    //         case 'tab-top-sellers':
-    //             setVisibleProducts(topSellers);
-    //             setImgFolder('tab-top-sellers');
-    //             break;
-    //         default:
-    //             setVisibleProducts(onSaleProducts);
-    //             setImgFolder('tab-on-sale');
-    //             break;
-    //     }    
-    //     // console.log('visibleProducts sau khi click:', visibleProducts); // Kiểm tra dữ liệu ở đây    
-    // }
     const handleTabClick = (tab: string) => {
         setActiveTab(tab);
         localStorage.setItem('activeTab', tab);
