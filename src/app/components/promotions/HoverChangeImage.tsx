@@ -28,7 +28,8 @@ return (
 		}
 		{	
 			isNew && (
-				<div className="absolute top-8 left-2 bg-[#899d81] text-white text-xs py-0.5 px-[13px] z-10" style={discountLabelStyle}>
+				<div className={`absolute ${discountedPrice > 0 ? 'top-8' : 'top-2'} left-2 bg-[#899d81] text-white text-xs py-0.5 px-[13px] z-10`}
+					style={discountLabelStyle}>
 					NEW
 				</div>
 			)
@@ -67,5 +68,5 @@ return (
     );
   };
   
-  export default HoverChangeImage;
+export default HoverChangeImage;
   
