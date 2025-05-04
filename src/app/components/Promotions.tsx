@@ -3,9 +3,6 @@ import { useState,useEffect} from 'react';
 import ZoomImage from './promotions/ZoomImage';
 import HoverChangeImage from './promotions/HoverChangeImage';
 
-
-// import HoverChangeImage from './new_products/HoverChangeImage';
-// import ZoomImage from './new_products/ZoomImage';
 interface Product {
     id: number;
     name: string;
@@ -24,12 +21,14 @@ interface Product {
 
 const Promotions = () => {
 
-    const [activeTab, setActiveTab] = useState('on-sale');
+    const [activeTab, setActiveTab] = useState('tab-on-sale');
     const [onSaleProducts, setOnSaleProducts] = useState<Product[]>([]);
     const [featuredProducts, setFeaturedProducts] = useState<Product[]>([]);
     const [topSellers, setTopSellers] =useState<Product[]>([]);
     const [visibleProducts, setVisibleProducts] = useState<Product[]>([]);
+    const [imgFolder, setImgFolder] = useState('tab-on-sale');
 
+    // Lay du lieu tu file JSON
     useEffect(() => {
         const fetchProducts = async () => {
             try {
@@ -55,27 +54,61 @@ const Promotions = () => {
         fetchProducts();
     }, []);
 
-    const handleTabClick = (tab:string) => {
-        setActiveTab(tab);
 
-        switch (tab) {
-            case 'on-sale':
+    // Đọc tab đã lưu khi reload
+    useEffect(() => {
+        const savedTab = localStorage.getItem('activeTab');
+        if (savedTab) {
+            setActiveTab(savedTab);
+        }
+    }, []);    
+    
+    // Đọc tab đã lưu khi reload
+    useEffect(() => {              
+        switch (activeTab) {
+            case 'tab-on-sale': 
                 setVisibleProducts(onSaleProducts);
+                setImgFolder('tab-on-sale');
                 break;
-            case 'featured':
+            case 'tab-featured':
                 setVisibleProducts(featuredProducts);
+                setImgFolder('tab-featured');
                 break;
-            case 'top-sellers':
+            case 'tab-top-sellers':
                 setVisibleProducts(topSellers);
+                setImgFolder('tab-top-sellers');
                 break;
-            default:
-                setVisibleProducts(onSaleProducts);
-                break;
-        }    
-        console.log('visibleProducts sau khi click:', visibleProducts); // Kiểm tra dữ liệu ở đây    
-    }
+        }       
+    },[activeTab, onSaleProducts, featuredProducts, topSellers]);
 
+    // const handleTabClick = (tab:string) => {
+    //     setActiveTab(tab);
+    //     localStorage.setItem('activeTab', tab); // lưu lại tab
 
+    //     switch (tab) {
+    //         case 'tab-on-sale': 
+    //             setVisibleProducts(onSaleProducts);
+    //             setImgFolder('tab-on-sale');
+    //             break;
+    //         case 'tab-featured':
+    //             setVisibleProducts(featuredProducts);
+    //             setImgFolder('tab-featured');
+    //             break;
+    //         case 'tab-top-sellers':
+    //             setVisibleProducts(topSellers);
+    //             setImgFolder('tab-top-sellers');
+    //             break;
+    //         default:
+    //             setVisibleProducts(onSaleProducts);
+    //             setImgFolder('tab-on-sale');
+    //             break;
+    //     }    
+    //     // console.log('visibleProducts sau khi click:', visibleProducts); // Kiểm tra dữ liệu ở đây    
+    // }
+    const handleTabClick = (tab: string) => {
+        setActiveTab(tab);
+        localStorage.setItem('activeTab', tab);
+    };
     return (
         <section className='w-full mt-12 lg:mt-16 clear-both'>
             <div className='mx-auto px-8 lg:px-16 flex flex-col items-center justify-between gap-1'>
@@ -84,28 +117,27 @@ const Promotions = () => {
             </div>
             {/* tabs promotion */}
             <div className="flex justify-center mt-10 gap-10">
-                <button className={`font-semibold text-base border-b-2 cursor-pointer
-                    ${activeTab === 'on-sale' ? 'border-[#222]' : 'border-transparent'}
-                    : ${activeTab !== 'on-sale' ? 'text-gray-500 hover:text-gray-700' : ''} 
-                    `} onClick={() => handleTabClick('on-sale')} >
+                <button className={`text-base border-b-2 cursor-pointer
+                    ${activeTab === 'tab-on-sale' ? 'border-[#222] font-semibold' : 'border-transparent'}
+                    : ${activeTab !== 'tab-on-sale' ? 'text-gray-500 hover:text-gray-700' : ''} 
+                    `} onClick={() => handleTabClick('tab-on-sale')} >
                         ON SALE
                 </button>
 
                 <button className={`font-light border-b-2 cursor-pointer
-                    ${activeTab === 'featured' ? 'border-[#222]' : 'border-transparent'}
-                    : ${activeTab !== 'featured' ? 'text-gray-500 hover:text-gray-700' : ''} 
-                    `} onClick={() => handleTabClick('featured')} >
+                    ${activeTab === 'tab-featured' ? 'border-[#222] font-semibold' : 'border-transparent'}
+                    : ${activeTab !== 'tab-featured' ? 'text-gray-500 hover:text-gray-700' : ''} 
+                    `} onClick={() => handleTabClick('tab-featured')} >
                         FEATURED
                 </button>
 
                 <button className={`font-light border-b-2 cursor-pointer
-                    ${activeTab === 'top-sellers' ? 'border-[#222]' : 'border-transparent'}
-                    : ${activeTab !== 'top-sellers' ? 'text-gray-500 hover:text-gray-700' : ''} 
-                    `} onClick={() => handleTabClick('top-sellers')} >
+                    ${activeTab === 'tab-top-sellers' ? 'border-[#222] font-semibold' : 'border-transparent'}
+                    : ${activeTab !== 'tab-top-sellers' ? 'text-gray-500 hover:text-gray-700' : ''} 
+                    `} onClick={() => handleTabClick('tab-top-sellers')} >
                         TOP SELLERS
                 </button>
-                {/* <button className="font-normal text-base text-gray-500 hover:text-gray-700">FEATURED</button>
-                <button className="font-normal text-base text-gray-500 hover:text-gray-700">TOP SELLERS</button> */}
+               
             </div>
            
            {/* Hiển thị danh sách sản phẩm */}
@@ -115,18 +147,18 @@ const Promotions = () => {
                     visibleProducts.map((product) => (
                         product.hoverEffect === 'changeImage' && product.image2 ? (
                             <HoverChangeImage key={product.id} src={`/img/${product.image}`} 
-                                    hoverSrc={`/img/${product.image2}`} alt={product.name} 
+                                    hoverSrc={`/img/${imgFolder}/${product.image2}`} alt={product.name} 
                                     cate_name={product.category}
                                     originalPrice = {product.originalPrice ?? 0} 
                                     discountedPrice = {product.discountedPrice ?? 0}
                                     isNew = {product.isNew ?? false} />) 
-                            : (<ZoomImage key={product.id} src={`/img/${product.image}`} 
+                            : (<ZoomImage key={product.id} src={`/img/${imgFolder}/${product.image}`} 
                                     alt={product.name} cate_name={product.category}
                                     originalPrice = {product.originalPrice ?? 0} 
                                     discountedPrice = {product.discountedPrice ?? 0}
                                     isNew = {product.isNew ?? false} />)
                     ))
-               }     
+                }     
            </div>
         </section>
     )

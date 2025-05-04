@@ -25,7 +25,7 @@ const BuyOnline = () => {
                             className='rounded-full px-8 py-2.5 bg-[#222] 
                                 text-white w-fit cursor-pointer
                                 hover:bg-gray-500 hover:text-gray-200 mt-2'
-                            initial={{ x:140, opacity:0 }}
+                            initial={{ x:140, opacity:0 }}      
                             animate={{ x:0, opacity:1 }}
                             transition={{duration:1,ease: 'easeOut'}}>
                                     Shop Now

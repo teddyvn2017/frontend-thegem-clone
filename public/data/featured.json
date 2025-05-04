@@ -1,141 +1,142 @@
 [
     {
       "id": 1,
-      "name": "Natural Lemonade",
-      "category": "Other",
-      "originalPrice": 3.99,
-      "discountedPrice": 3.49,
+      "name": "Butter Buns",
+      "category": "Bread, Bakery",
+      "originalPrice": 4.25,
+      "discountedPrice": 0,
       "discountPercent": 13,
-      "image": "natural-lemonade.png",
-      "hoverEffect": "zoom",
-      "tag": "onsale"
+      "image": "butter_buns01.jpg",
+      "image2": "butter_buns02.jpg",
+      "hoverEffect": "changeImage",
+      "tag": "featured"
     },
     {
       "id": 2,
-      "name": "Red Onion",
-      "category": "Vegetables, Fruits",
-      "originalPrice": 12.33,
-      "discountedPrice": 11.99,
-      "discountPercent": 3,
-      "image": "red-onion.png",
-      "hoverEffect": "changeImage",
-      "hoverImage": "red-onion-hover.png",
-      "tag": "onsale"
-    },
-    {
-      "id": 3,
-      "name": "Natural Buckwheat Honey",
-      "category": "Honey, Nuts",
-      "originalPrice": 49.49,
-      "discountedPrice": 45.63,
-      "discountPercent": 8,
-      "image": "buckwheat-honey.png",
-      "hoverEffect": "zoom",
-      "tag": "onsale"
-    },
-    {
-      "id": 4,
-      "name": "Green Tea",
-      "category": "Other",
-      "originalPrice": 15.63,
-      "discountedPrice": 13.99,
-      "discountPercent": 10,
-      "image": "green-tea.png",
-      "hoverEffect": "changeImage",
-      "hoverImage": "green-tea-hover.png",
-      "tag": "onsale"
-    },
-    {
-      "id": 5,
-      "name": "Lager Beer",
-      "category": "Wine, Beer",
-      "originalPrice": 3.99,
-      "discountedPrice": 3.49,
-      "discountPercent": 13,
-      "image": "lager-beer.png",
-      "hoverEffect": "zoom",
-      "tag": "onsale"
-    },
-    {
-      "id": 6,
       "name": "Spanish Oranges",
       "category": "Vegetables, Fruits",
       "originalPrice": 18.99,
       "discountedPrice": 14.99,
+      "discountPercent": 3,
+      "image": "spanish-oranges.jpg",
+      "image2": "spanish-oranges-hover.jpg",
+      "hoverEffect": "changeImage",      
+      "tag": "featured"
+    },
+    {
+      "id": 3,
+      "name": "Juicy Pineapple",
+      "category": "Vegetables, Fruits",
+      "originalPrice": 6.49,
+      "discountedPrice": 5.49,
+      "discountPercent": 8,
+      "image": "juicy-pineapple",
+      "hoverEffect": "zoom",
+      "tag": "featured"
+    },
+    {
+      "id": 4,
+      "name": "Gouda Cheese",
+      "category": "Cheese, Eggs",
+      "originalPrice": 37.44,
+      "discountedPrice": 0,
+      "discountPercent": 10,
+      "image": "green-tea.png",
+      "hoverEffect": "changeImage",
+      "hoverImage": "green-tea-hover.png",
+      "tag": "new"
+    },
+    {
+      "id": 5,
+      "name": "Green Craft Beer",
+      "category": "Wine, Beer",
+      "originalPrice": 9.99,
+      "discountedPrice": 0,
+      "discountPercent": 13,	
+      "image": "lager-beer.png",
+      "hoverEffect": "zoom",
+      "tag": "featured"
+    },
+    {
+      "id": 6,
+      "name": "Red Apple",
+      "category": "Vegetables, Fruits",
+      "originalPrice": 13.99,
+      "discountedPrice": 0,
       "discountPercent": 21,
       "image": "spanish-oranges.png",
       "hoverEffect": "zoom",
       "isNew": true,
-      "tag": "onsale"
+      "tag": "featured"
     },
     {
       "id": 7,
-      "name": "Pineapple",
+      "name": "Ripe Blueberry",
       "category": "Vegetables, Fruits",
-      "originalPrice": 14.99,
-      "discountedPrice": 13.94,
+      "originalPrice": 35.99,
+      "discountedPrice":29.99,
       "discountPercent": 7,
       "image": "pineapple.png",
       "hoverEffect": "changeImage",
       "hoverImage": "pineapple-hover.png",
       "isNew": true,
-      "tag": "onsale"
+      "tag": "featured"
     },
     {
       "id": 8,
-      "name": "Red Wine",
-      "category": "Wine, Beer",
-      "originalPrice": 23.99,
-      "discountedPrice": 20.87,
+      "name": "Ruddy Bagels",
+      "category": "Bread, Bakery",
+      "originalPrice": 1.99,
+      "discountedPrice": 0,
       "discountPercent": 13,
       "image": "red-wine.png",
       "hoverEffect": "zoom",
-      "tag": "onsale"
+      "tag": "featured"
     },
     {
       "id": 9,
-      "name": "Cooking Oil",
-      "category": "Other",
-      "originalPrice": 9.99,
-      "discountedPrice": 7.79,
+      "name": "Rye Crispbread",
+      "category": "Bread, Bakery",
+      "originalPrice": 4.12,
+      "discountedPrice": 0,
       "discountPercent": 22,
       "image": "cooking-oil.png",
       "hoverEffect": "zoom",
-      "tag": "onsale"
+      "tag": "featured"
     },
     {
       "id": 10,
-      "name": "White Mushroom",
-      "category": "Vegetables, Fruits",
-      "originalPrice": 11.99,
-      "discountedPrice": 10.79,
+      "name": "Salted Crackers",
+      "category": "Bread, Bakery",
+      "originalPrice": 1.78,
+      "discountedPrice": 0,
       "discountPercent": 10,
       "image": "white-mushroom.png",
       "hoverEffect": "zoom",
-      "tag": "onsale"
+      "tag": "featured"
     },
     {
       "id": 11,
-      "name": "Yellow Smoothie",
-      "category": "Other",
-      "originalPrice": 8.99,
-      "discountedPrice": 7.99,
+      "name": "Tiger Beer",
+      "category": "Wine, Beer",
+      "originalPrice": 6.49,
+      "discountedPrice": 0,
       "discountPercent": 11,
       "image": "yellow-smoothie.png",
       "hoverEffect": "changeImage",
       "hoverImage": "yellow-smoothie-hover.png",
-      "tag": "onsale"
+      "tag": "featured"
     },
     {
       "id": 12,
-      "name": "Tinned Fish",
-      "category": "Other",
-      "originalPrice": 6.99,
-      "discountedPrice": 6.15,
+      "name": "Ripe Banana",
+      "category": "Vegetables, Fruits",
+      "originalPrice": 13.99,
+      "discountedPrice": 9.99,
       "discountPercent": 12,
       "image": "tinned-fish.png",
       "hoverEffect": "zoom",
-      "tag": "onsale"
+      "tag": "featured"	
     }
   ]
   

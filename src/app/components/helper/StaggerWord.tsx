@@ -45,7 +45,7 @@ const StaggerWord: React.FC<StaggerWordProps> = ({ text, className }) => {
 				variants={wordAnimation}
 				className={className}
 			>
-				{word}&nbsp;
+				{word}&nbsp;	
 			</motion.span>
 		))}	
     </motion.div>
