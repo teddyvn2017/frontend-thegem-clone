@@ -146,7 +146,7 @@ const Promotions = () => {
                 {
                     visibleProducts.map((product) => (
                         product.hoverEffect === 'changeImage' && product.image2 ? (
-                            <HoverChangeImage key={product.id} src={`/img/${product.image}`} 
+                            <HoverChangeImage key={product.id} src={`/img/${imgFolder}/${product.image}`} 
                                     hoverSrc={`/img/${imgFolder}/${product.image2}`} alt={product.name} 
                                     cate_name={product.category}
                                     originalPrice = {product.originalPrice ?? 0} 
