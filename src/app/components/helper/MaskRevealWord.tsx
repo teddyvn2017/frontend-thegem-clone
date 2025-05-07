@@ -8,30 +8,32 @@ interface MaskRevealWordProps {
 const MaskRevealWord: React.FC<MaskRevealWordProps> = ({ text }) => {
     const words = text.split(' ');
     const containerRef = useRef<HTMLDivElement>(null);
-    const isInView = useInView(containerRef, { once: true, margin: "-50px" }); 
+    const isInView = useInView(containerRef, { once: false, margin: "-50px" }); //chạy 1 lần thì once: true
     // "once: true" nghĩa là chỉ chạy 1 lần, "margin" cho phép trigger sớm/muộn hơn
-  return (
-    <div className="inline-flex flex-wrap gap-x-2">
-      {
-        words.map((word, index) => (
-            <span key={index} className="inline-flex overflow-hidden">
-            <motion.span
-                className="inline-block"
-                initial={{ x: "-100%" }}
-                animate={{ x: "0%" }}
-                // animate={isInView ? { x: "0% " } : {}} // chỉ animate nếu đã vào view
-                transition={{
-                duration: 0.8,
-                ease: "easeOut",
-                delay: 0.22 + index * 0.02, // giống delay của họ (220ms, 240ms, 260ms, ...)
-                }}
-            >
-                {word}
-            </motion.span>
-            </span>
-        ))}
-    </div>
-  );
+  	return (
+		<div 
+			ref={containerRef}			
+			className="inline-flex flex-wrap gap-x-2">
+		{
+			words.map((word, index) => (
+				<span key={index} className="inline-flex overflow-hidden">
+					<motion.span
+						className="inline-block"
+						initial={{ x: "-100%" }}
+						// animate={{ x: "0%" }}
+						animate={isInView ? { x: "0%" } : {}} // chỉ chạy khi vào view
+						transition={{
+						duration: 0.8,
+						ease: "easeOut",
+						delay: 0.22 + index * 0.02, // giống delay của họ (220ms, 240ms, 260ms, ...)
+						}}
+					>
+						{word}
+					</motion.span>
+				</span>
+			))}
+		</div>
+  	);
 };
 
 export default MaskRevealWord;

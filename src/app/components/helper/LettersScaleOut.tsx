@@ -23,7 +23,7 @@ const LettersScaleOut: React.FC<LettersScaleOutProps> = ({ text, className }) =>
                             initial={{ scale: 1.5, opacity: 0 }}
                             animate={{ scale: 1, opacity: 1 }}
                             transition={{
-                            duration: 0.4, // giống CSS
+                            duration: 0.3, 
                             delay,
                             ease: [0.3, 4, 0.4, 1], // giống cubic-bezier trong CSS
                             }}>

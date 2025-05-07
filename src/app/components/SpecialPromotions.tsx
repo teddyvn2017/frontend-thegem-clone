@@ -97,7 +97,7 @@ const SpecialPromotions = () => {
 						</motion.button>
 					</div>
 				</motion.div>
-
+				
 				{/* Block 2 */}
 				<motion.div 
 					className="relative h-full w-full"
@@ -108,45 +108,52 @@ const SpecialPromotions = () => {
 				>
 					<Image src={sp2} alt="image" className="object-cover min-h-[400px]" />
 
-					<div
-						className="absolute top-1/2 -translate-y-1/2 left-8 lg:left-8 flex flex-col gap-2 overflow-hidden">
+					<div className="absolute top-1/2 -translate-y-1/2 left-8 lg:left-8 flex flex-col gap-2 overflow-hidden">
+
 						<motion.h3
-							className="text-white text-wrap text-2xl md:text-4xl leading-6 lg:leading-10 overflow-hidden"
+							className="text-white text-wrap text-2xl md:text-4xl leading-6 lg:leading-10 overflow-hidden font-semibold"
 							initial={{ opacity: 0 }}
-							animate={{ opacity: 1 }}
+							whileInView={{ opacity: 1 }}
+							viewport={{ once: true, amount: 0.4 }}
 							transition={{ delay: 0.2, duration: 0.6, ease: "easeOut" }}
-							>
+							
+						>
 							<MaskRevealWord text="More than 250 Products From" />
+							{/* <span>More than 250 Products From</span> */}
 						</motion.h3>
 						
 						<motion.h2
 							className="text-yellow-400 text-4xl md:text-5xl lg:text-7xl uppercase font-semibold"
-							initial={{ x: -120, opacity: 0 }} // Bắt đầu từ trái 120px và ẩn
-							animate={{ x: 0, opacity: 1 }} // Di chuyển vào vị trí ban đầu và hiển thị
-							transition={{ duration: 0.6, ease: "easeOut" }} // Điều chỉnh duration nếu cần
+							initial={{ x: -120, opacity: 0 }}
+							whileInView={{ x: 0, opacity: 1 }}
+							viewport={{ once: true, amount: 0.4 }}
+							transition={{ duration: 0.6, ease: "easeOut" }}
 						>
 							3.99$
 						</motion.h2>
 
 						<motion.h4
 							className="text-white text-base lg:text-xl text-wrap"
-							initial={{ x: -120, opacity: 0 }} // Bắt đầu từ trái 120px và ẩn
-							animate={{ x: 0, opacity: 1 }} // Di chuyển vào vị trí ban đầu và hiển thị
-							transition={{ duration: 0.6, ease: "easeOut" }} // Điều chỉnh duration nếu cần
+							initial={{ x: -120, opacity: 0 }}
+							whileInView={{ x: 0, opacity: 1 }}
+							viewport={{ once: true, amount: 0.4 }}
+							transition={{ duration: 0.6, ease: "easeOut" }}
 						>
 							<MaskRevealWord text="Lorem ipsum dolor sit amet consectetur!" />						
 						</motion.h4>
 
 						<motion.button
 							className="bg-transparent border border-white text-white text-sm rounded-full px-6 py-2 mt-4 w-fit cursor-pointer hover:bg-white hover:text-[#222]"
-							initial={{ x: -120, opacity: 0 }} // Bắt đầu từ trái 80px và ẩn
-							animate={{ x: 0, opacity: 1 }} // Di chuyển vào vị trí ban đầu và hiển thị
-							transition={{ duration: 0.6, ease: "easeOut" }} // Điều chỉnh duration nếu cần
+							initial={{ x: -120, opacity: 0 }}
+							whileInView={{ x: 0, opacity: 1 }}
+							viewport={{ once: true, amount: 0.4 }}
+							transition={{ duration: 0.6, ease: "easeOut" }}
 						>
 							Shop Now
 						</motion.button>
 					</div>	
 				</motion.div>
+
 			</div>
 		</section>
   	)
