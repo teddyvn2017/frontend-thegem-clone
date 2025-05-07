@@ -23,7 +23,7 @@ const ZoomImage = ({src,alt,cate_name,originalPrice,maxPrice,discountedPrice, is
     const formatPrice = (price: number) => `$${price.toFixed(2)}`;
     return (
         <>
-            <div className='relative flex flex-col items-center group'>
+            <div className='relative flex flex-col items-center group/image_item'>
                 <div>
                     {					
                         tag?.trim() && (
@@ -32,18 +32,18 @@ const ZoomImage = ({src,alt,cate_name,originalPrice,maxPrice,discountedPrice, is
                             </div>
                         )
                     }                                    
-                    <div className="absolute top-4 right-4 z-10 rounded-full w-8 h-8
+                    <div className="group/heart absolute top-4 right-4 z-10 rounded-full w-8 h-8
                                     bg-white flex flex-col items-center justify-center
-                                    opacity-0 group-hover:opacity-100
+                                    opacity-0 group-hover/image_item:opacity-100 
                                     hover:bg-[#222] transition-colors duration-300 cursor-pointer">
                         <AiOutlineHeart className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 
-                                                    text-normal text-[#222] hover:text-white transition-colors 
+                                                    text-normal text-[#222] group-hover/heart:text-white transition-colors 
                                                     duration-300 z-20" />
 
                     </div>
                     <div className="absolute top-4 right-12 z-10 rounded-full w-8 h-8
                                     bg-white flex flex-col items-center justify-center
-                                    opacity-0 group-hover:opacity-100
+                                    opacity-0 group-hover/image_item:opacity-100 
                                         hover:bg-[#222] transition-colors duration-300 cursor-pointer">
                         <BsBag className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 
                                         text-normal z-20 text-[#222] hover:text-white transition-colors 
@@ -55,7 +55,7 @@ const ZoomImage = ({src,alt,cate_name,originalPrice,maxPrice,discountedPrice, is
                     alt={alt}
                     // layout="fill"
                     className="w-full h-full max-w-[280px] object-cover mb-2 max-h-[280px] 
-                                lg:max-h-[300px] transition-transform duration-300 hover:scale-110 cursor-pointer"
+                                lg:max-h-[300px] transition-transform duration-300 group-hover/image_item:scale-110 cursor-pointer"
                 />            
                 <div className="grid grid-rows-[auto_auto_auto] items-center justify-start gap-1 pt-2 w-full">
                     <h4 className="text-[12px] lg:text-sm font-normal text-left 

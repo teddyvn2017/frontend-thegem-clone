@@ -1,5 +1,5 @@
 import React from 'react'
-
+import { AiOutlineHeart } from "react-icons/ai";
 type ZoomImageProps = {
     src: string;
     cate_name:string;
@@ -19,7 +19,7 @@ const ZoomImage = ({src,alt,cate_name,originalPrice,discountedPrice,isNew}:ZoomI
     const formatPrice = (price: number) => `$${price.toFixed(2)}`;
     return (
         <>
-            <div className='relative flex flex-col items-center group'>
+            <div className='relative flex flex-col items-center group/image_item'>
                 {discountPercentage > 0 && (
                     <div className="absolute top-2 left-2 bg-amber-200 text-black text-xs py-0.5 px-4 z-10" style={discountLabelStyle}>
                         -{discountPercentage}%
@@ -32,10 +32,21 @@ const ZoomImage = ({src,alt,cate_name,originalPrice,discountedPrice,isNew}:ZoomI
                         </div>
                     )
                 }
+                
+                {/* vòng tròn backgroudn màu đen */}
+                <div className="group/heart absolute top-1 right-4 z-20 rounded-full w-8 h-8
+                                                    bg-transparent flex flex-col items-center justify-center                                                   
+                                                    hover:bg-[#222] transition-colors duration-300 cursor-pointer">
+                    {/* hình trái tim */}
+                    <AiOutlineHeart className="absolute top-4 left-1/2 -translate-x-1/2 -translate-y-1/2 
+                                                text-normal text-[#222] group-hover/heart:text-white transition-colors 
+                                                duration-300 z-30" />
+                
+                </div>
                 <img
                     src={src}
                     alt={alt}
-                    className="object-cover mb-2 max-h-[280px] lg:max-h-[300px] transition-transform duration-300 hover:scale-110 cursor-pointer"
+                    className="object-cover mb-2 max-h-[280px] lg:max-h-[300px] transition-transform duration-300 group-hover/image_item:scale-110 cursor-pointer"
                 />            
                 <div className="grid grid-rows-[auto_auto_auto] items-center gap-0 pt-2">
                     <h4 className="text-[12px] lg:text-sm font-normal text-center text-gray-400 row-span-1">{cate_name}</h4>

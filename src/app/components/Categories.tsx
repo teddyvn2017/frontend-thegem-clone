@@ -18,6 +18,7 @@ const Categories = () => {
                             relative max-h-[700px] pt-[700px] 
                             overflow-hidden cursor-pointer'>
                 <Image src={cate1_l} alt='image'
+                    fill
                     className='object-cover transition-transform duration-300 ease-in-out hover:scale-110' />
                 <div className='absolute bottom-6 left-6 z-10 text-[#222]'>
                     <h4 className='text-2xl font-semibold'>Vegetables, Fruits</h4>

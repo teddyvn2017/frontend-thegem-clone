@@ -23,7 +23,7 @@ type HoverChangeImageProps = {
 	const formatPrice = (price: number) => `$${price.toFixed(2)}`;
 	// console.log('tag:', JSON.stringify(tag));  
     return (
-      	<div className="relative flex flex-col items-center bg-white cursor-pointer overflow-hidden group">
+      	<div className="relative flex flex-col items-center bg-white cursor-pointer overflow-hidden group/image_item">
 			<div>
 					{					
 						tag?.trim() && (
@@ -33,15 +33,15 @@ type HoverChangeImageProps = {
 						)
 					}
 					
-					<div className="absolute top-4 right-4 z-10 rounded-full w-8 h-8
+					<div className="group/heart absolute top-4 right-4 z-10 rounded-full w-8 h-8
 									bg-white flex flex-col items-center justify-center
-									opacity-0 group-hover:opacity-100
+									opacity-0 group-hover/image_item:opacity-100
 									hover:bg-[#222] transition-colors duration-300 cursor-pointer">
 						<AiOutlineHeart className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 
-													text-normal z-10 text-[#222] hover:text-white transition-colors duration-300" />
+													text-normal z-10 text-[#222] group-hover/heart:text-white transition-colors duration-300" />
 
 					</div>
-				<div className="absolute top-4 right-12 z-10 rounded-full w-8 h-8
+				<div className="group/bag absolute top-4 right-12 z-10 rounded-full w-8 h-8
 								bg-white flex flex-col items-center justify-center
 								opacity-0 group-hover:opacity-100
 									hover:bg-[#222] transition-colors duration-300 cursor-pointer">
@@ -55,12 +55,13 @@ type HoverChangeImageProps = {
 				src={src}
 				alt={alt}								
 				className="w-full object-cover mb-2 max-h-[280px] lg:max-h-[300px] 
-							transition-opacity duration-600 opacity-100 group-hover:opacity-0"
+							transition-opacity duration-600 opacity-100 group-hover/image_item:opacity-0"
 			/>
 			<img
 				src={hoverSrc}
 				alt={`${alt} Hover`}
-				className="w-full absolute top-0 left-1/2 -translate-x-1/2 object-cover mb-2 max-h-[280px] lg:max-h-[300px] transition-opacity duration-600 opacity-0 group-hover:opacity-100"
+				className="w-full absolute top-0 left-1/2 -translate-x-1/2 object-cover mb-2 max-h-[280px] lg:max-h-[300px]
+							 transition-opacity duration-600 opacity-0 group-hover/image_item:opacity-100"
 			/>
 
 
