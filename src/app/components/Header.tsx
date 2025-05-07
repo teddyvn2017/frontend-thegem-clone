@@ -111,7 +111,6 @@ const Header = () => {
 						]
 					}
 				>
-
 					Products
 				</MenuItem>
 				<MenuItem href="#" isActive={false}>Categories</MenuItem>
@@ -120,15 +119,16 @@ const Header = () => {
 			<Link href="/">
 				<Image src={logo} alt="logo thegem" className='w-24 h-12 lg:w-32 lg:h-32 xl:w-40 xl:h-24' />
 			</Link>
-			<div className='hidden lg:flex lg:flex-row gap-2 items-center '>
+			<div className='hidden lg:flex lg:flex-row gap-6 items-center'>
 				{/* item này không cần thiết, sẽ dùng với search bar, dialogue modal*/}
 				{/* <input type="text" placeholder='Search' className='border-none px-4 py-2 focus:outline-none text-sm' /> */}
 				<Combobox />
-				<i className='bx bx-user w-6 h-6'></i>
-				<i className='bx bx-shopping-bag w-6 h-6' ></i>
+				<i className='bx bx-user text-2xl cursor-pointer'></i>
+				<i className='bx bx-shopping-bag text-2xl cursor-pointer' ></i>
 			</div>
 			<BurgerIcon isOpen={isMobileMenuOpen} toggleOpen={toggleMobileMenu}/>
         </nav>
+
 		<MenuMobile 
 			isOpen={isMobileMenuOpen} 
 			onClose={toggleMobileMenu} 

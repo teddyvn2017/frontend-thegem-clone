@@ -76,7 +76,7 @@ const Combobox = () => {
             {/* Icon Tìm kiếm (tùy chọn) */}
             <div className="items-center pointer-events-none">
                 {/* <MagnifyingGlassIcon className="h-5 w-5 text-gray-400" aria-hidden="true" /> */}
-                <i className='bx bx-search h-6 w-6 text-gray-400' aria-hidden="true"></i>
+                <i className='bx bx-search text-2xl text-gray-400 mt-1 fon' aria-hidden="true"></i>
             </div>
         </div>        
     )
