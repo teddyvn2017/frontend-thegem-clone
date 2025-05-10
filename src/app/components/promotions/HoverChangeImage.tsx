@@ -50,7 +50,8 @@ return (
 		<img
 			src={hoverSrc}
 			alt={`${alt} Hover`}
-			className="absolute top-0 left-1/2 -translate-x-1/2 object-cover mb-2 max-h-[280px] lg:max-h-[300px] transition-opacity duration-600 opacity-0 group-hover/image_item:opacity-100"
+			className="absolute top-0 left-1/2 -translate-x-1/2 object-cover mb-2 max-h-[280px] lg:max-h-[300px] 
+						transition-opacity duration-600 opacity-0 group-hover/image_item:opacity-100"
 		/>
 		<div className="grid grid-rows-[auto_auto_auto] items-center gap-1 pt-2">
 			<h4 className="row-span-1 text-[12px] lg:text-sm font-normal text-center text-gray-400">{cate_name}</h4>
