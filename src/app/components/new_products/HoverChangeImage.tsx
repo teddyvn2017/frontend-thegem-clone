@@ -25,28 +25,33 @@ type HoverChangeImageProps = {
     return (
       	<div className="relative flex flex-col items-center bg-white cursor-pointer overflow-hidden group/image_item">
 			<div>
-					{					
-						tag?.trim() && (
-							<div className="absolute top-4 left-0 bg-amber-200 text-[#222] text-xs  py-0.5 px-[13px] z-10 uppercase" style={discountLabelStyle}>
-								{tag}
-							</div>
-						)
-					}
+				{					
+					tag?.trim() && (
+						<div className="absolute top-4 left-0 bg-amber-200 text-[#222] text-xs  py-0.5 px-[13px] z-20 uppercase" style={discountLabelStyle}>
+							{tag}
+						</div>
+					)
+				}
 					
-					<div className="group/heart absolute top-4 right-4 z-10 rounded-full w-8 h-8
-									bg-white flex flex-col items-center justify-center
-									opacity-0 group-hover/image_item:opacity-100
-									hover:bg-[#222] transition-colors duration-300 cursor-pointer">
-						<AiOutlineHeart className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 
-													text-normal z-10 text-[#222] group-hover/heart:text-white transition-colors duration-300" />
-
-					</div>
-				<div className="group/bag absolute top-4 right-12 z-10 rounded-full w-8 h-8
+				{/* icon heart */}
+				<div className="group/heart absolute top-4 right-4 z-10 rounded-full w-8 h-8
 								bg-white flex flex-col items-center justify-center
-								opacity-0 group-hover:opacity-100
-									hover:bg-[#222] transition-colors duration-300 cursor-pointer">
+								opacity-0 group-hover/image_item:opacity-100
+								hover:bg-[#222] transition-colors duration-300 cursor-pointer">
+					<AiOutlineHeart className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 
+												text-normal z-10 text-[#222] group-hover/heart:text-white 
+												transition-colors duration-300" />
+				</div>
+
+				{/* icon bag */}
+				<div className="group/bag absolute top-4 right-14 z-10 rounded-full w-8 h-8
+								bg-white flex flex-col items-center justify-center
+								opacity-0 group-hover/image_item:opacity-100
+								hover:bg-[#222] transition-colors duration-300 cursor-pointer">
+
 					<BsBag className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 
-												text-normal z-10 text-[#222] hover:text-white transition-colors duration-300" />
+												text-normal z-10 text-[#222] group-hover/bag:text-white 
+												transition-colors duration-300" />
 
 				</div>
 			</div>

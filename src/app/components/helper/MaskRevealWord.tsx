@@ -20,8 +20,7 @@ const MaskRevealWord: React.FC<MaskRevealWordProps> = ({ text }) => {
 					<motion.span
 						className="inline-block"
 						initial={{ x: "-100%" }}
-						// animate={{ x: "0%" }}
-						animate={isInView ? { x: "0%" } : {}} // chỉ chạy khi vào view
+						animate={isInView ? { x: "0%", opacity: 1 } : { x: "-100%", opacity: 0 }} 
 						transition={{
 						duration: 0.8,
 						ease: "easeOut",
@@ -38,7 +37,7 @@ const MaskRevealWord: React.FC<MaskRevealWordProps> = ({ text }) => {
 
 export default MaskRevealWord;
 
-// Hiệu ứng animation số 2 
+// Hiệu ứng animation số 2 chữ dồn từ trái qua phải
 // import React from 'react';
 // import { motion } from 'framer-motion';
 

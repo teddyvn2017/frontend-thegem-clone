@@ -76,10 +76,10 @@ const NewProducts = () => {
                         modules={[Navigation, Autoplay]}                    
                         loop={true}
                         spaceBetween={30} 
-                        autoplay={{
-                            delay: 2000,
-                            disableOnInteraction: false,
-                        }}
+                        // autoplay={{
+                        //     delay: 2000,
+                        //     disableOnInteraction: false,
+                        // }}
                         navigation={{
                             nextEl: '.custom-swiper-button-next',   
                             prevEl: '.custom-swiper-button-prev',
@@ -121,7 +121,7 @@ const NewProducts = () => {
                                 </SwiperSlide>
                             ))
                         }                           
-                        </Swiper>
+                    </Swiper>
                    
                 <div className="custom-swiper-button-prev rounded-full bg-gray-300 p-2">
                     <IoChevronBack className="w-6 h-6 text-gray-800 cursor-pointer" />
