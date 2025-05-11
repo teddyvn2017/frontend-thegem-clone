@@ -1,26 +1,32 @@
+// app/category/[slug]/page.tsx
 import { notFound } from "next/navigation";
+import CategoryTemplate from "@/app/components/templates/CategoryTemplate";
+type Category = {
+  category_slug: string;
+  title: string;
+  image: string;
+};
 
-interface Props {
-  	params: { slug: string };
-}
+export default async function CategoryPage({ params }: { params: { slug: string } }) {
+	const res = await fetch("http://localhost:3000/data/categories.json"); // chỉnh URL tùy vị trí file
 
-const validSlugs = ["vegetable-fruits", "electronics", "fashion"]; // hoặc fetch từ API
-
-export default function CategoryPage({ params }: Props) {
-	const { slug } = params;
-
-	if (!validSlugs.includes(slug)) {
-		return notFound(); // Hiện trang 404 nếu slug không hợp lệ
+	if (!res.ok) {
+  		console.error("Failed to fetch categories:", res.status, res.statusText);
 	}
+	
+	const categories: Category[] = await res.json();
 
-	switch (slug) {
-		case "vegetable-fruits":
-		return <div><h1>Rau củ quả</h1></div>;
-		case "electronics":
-		return <div><h1>Điện tử</h1></div>;
-		case "fashion":
-		return <div><h1>Thời trang</h1></div>;
-		default:
-		return notFound();
-	}
+	const category = categories.find((cat) => cat.category_slug === params.slug);
+
+	if (!category) return notFound();
+
+	return (
+    <CategoryTemplate
+		backgroundImage={category.image}
+		title={category.title}
+    >
+      {/* children nằm trong phần main của layout */}
+      <div>Danh sách sản phẩm hoặc nội dung chính</div>
+    </CategoryTemplate>
+  );
 }
