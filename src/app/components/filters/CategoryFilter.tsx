@@ -18,7 +18,7 @@ const CategoryFilter = () => {
 	const currentSlug = pathname.split('/').pop()
 
 	return (
-		<div className=''>
+		<div className='border-b-1 border-gray-200 pb-8'>
 			<h3 className='text-xl font-semibold mb-4'>Filter By Category</h3>
 			<ul className='flex flex-col gap-2 text-base text-[#222]'>
 				{

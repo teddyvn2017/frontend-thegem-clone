@@ -1,6 +1,7 @@
 // app/category/[slug]/page.tsx
 import { notFound } from "next/navigation";
 import CategoryTemplate from "@/app/components/templates/CategoryTemplate";
+
 type Category = {
   category_slug: string;
   title: string;
@@ -21,12 +22,15 @@ export default async function CategoryPage({ params }: { params: { slug: string 
 	if (!category) return notFound();
 
 	return (
-    <CategoryTemplate
-		backgroundImage={category.image}
-		title={category.title}
-    >
-      {/* children nằm trong phần main của layout */}
-      <div>Danh sách sản phẩm hoặc nội dung chính</div>
-    </CategoryTemplate>
+		<>
+			<CategoryTemplate
+				backgroundImage={category.image}
+				title={category.title}
+			>
+			{/* children nằm trong phần main của layout */}
+			<div>Danh sách sản phẩm hoặc nội dung chính</div>
+			</CategoryTemplate>
+			
+		</>
   );
 }

@@ -1,5 +1,7 @@
+'use client'
 import { IoIosSearch } from "react-icons/io";
 import CategoryFilter from "../filters/CategoryFilter";
+import CategoryPriceSlider from "@/app/components/filters/CategoryPriceSlider";
 type Props = {
     backgroundImage: string;
     title: string;
@@ -41,6 +43,7 @@ export default function CategoryTemplate({ backgroundImage, title, children }: P
                 <div className="flex flex-row gap-16">
                     <aside className="w-1/4">
                         <CategoryFilter />
+                        <CategoryPriceSlider />
                     </aside>
                     <main className="flex-1 w-3/4">{children}</main>
                     
