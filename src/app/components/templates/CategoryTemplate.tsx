@@ -55,7 +55,7 @@ export default function CategoryTemplate({ backgroundImage, title, children }: P
 
     return (
         <div className="mx-auto px-8 lg:px-16">
-            <div style={{ backgroundImage: `url(${backgroundImage})` }} 
+            <div style={{ backgroundImage: `url(${backgroundImage})`,backgroundPositionX: "70%",backgroundPositionY: "20%",  }} 
                 className="h-full min-h-[200px] lg:min-h-[300px] flex flex-col items-start justify-end 
                     px-8 xl:px-16 py-8 gap-4">
                 <h2 className="text-2xl text-[#222] font-light">Always Fresh And Tasty</h2>
@@ -117,8 +117,7 @@ export default function CategoryTemplate({ backgroundImage, title, children }: P
                     </div>
                 </div>
 
-                {/* Sidebar mobile */}
-                                {/* <MobileSidebar show={showSidebar} onClose={() => setShowSidebar(false)}> */}
+                {/* Sidebar mobile */}                               
                 <MobileSidebar show={showSidebar} onClose={() => setShowSidebar(false)}>
                     <CategoryFilter />
                     <CategoryPriceSlider />
