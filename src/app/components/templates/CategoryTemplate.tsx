@@ -1,7 +1,7 @@
 'use client'
 import { useState,useRef, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { AiOutlineDown } from "react-icons/ai";
+import { VscSettings } from "react-icons/vsc";
 import { IoIosSearch } from "react-icons/io";
 import { IoIosArrowDown } from "react-icons/io";
 import CategoryFilter from "../filters/CategoryFilter";
@@ -21,15 +21,6 @@ const sort_options:string[] = [
     "Sort by price: low to high",
     "Sort by price: high to low",
 ];
-// const categories: Category[] = [ // Khai báo rõ ràng kiểu dữ liệu cho mảng categories
-//         "All Categories",
-//         "Bread, Bakery",
-//         "Other",
-//         "Vegetables, Fruits",
-//         "Cheese, Eggs",
-//         "Wine, Beer",
-//         "Honey, Nuts",
-// ];
 
 export default function CategoryTemplate({ backgroundImage, title, children }: Props) {
     
@@ -69,18 +60,26 @@ export default function CategoryTemplate({ backgroundImage, title, children }: P
             </div>
 
             <div className="flex flex-col gap-6 mt-8">
-                <div className="flex flex-row lg:justify-between w-full">
-                    <div className="relative w-1/4">
+                <div className="flex flex-col lg:flex-row lg:justify-between w-full gap-4">
+                    <button className="lg:hidden flex flex-row items-center gap-2 border border-[#222]
+                                        hover:bg-[#222] hover:text-white 
+                                        rounded-full px-4 py-2 cursor-pointer
+                                        transition-colors duration-300">
+                        <VscSettings className="text-base"/>
+                        <span className="text-base">Show filter</span>
+                    </button>
+                    <div className="relative w-1/4 hidden lg:block">
                         <input type="text" placeholder="Search..." 
                             className="border-b-1 border-gray-300 py-2 px-4 focus:outline-none w-full" />
                         <IoIosSearch className="absolute top-3 right-3 text-xl" />
                     </div>
                     <div>
                         <div ref={cboRef} 
-                            className="relative inline-block">
+                            className="relative inline-block text-base w-full lg:w-auto">
                             <button
                                 onClick={() => setOpen(!open)}
-                                className="flex items-center gap-2 px-4 py-2 border border-black rounded-full cursor-pointer"
+                                className="flex items-center gap-2 px-4 py-2 border border-black 
+                                            rounded-full cursor-pointer justify-between w-full"
                             >
                                 {selected}
                                 <IoIosArrowDown  className={`transition-transform ${open ? "rotate-180" : ""}`} />
@@ -93,8 +92,8 @@ export default function CategoryTemplate({ backgroundImage, title, children }: P
                                             initial="hidden"
                                             animate="visible"
                                             exit="hidden"
-                                            className="absolute left-[-60px] mt-2 w-64 bg-white shadow-lg rounded-lg z-50 overflow-hidden"
-                                        >
+                                            className="absolute left-0 lg:-left-[60px] mt-2 w-64 bg-white shadow-lg 
+                                                        rounded-lg z-50 overflow-hidden">
                                             {
                                                 sort_options.map((item) => (
                                                     <div
@@ -113,7 +112,7 @@ export default function CategoryTemplate({ backgroundImage, title, children }: P
                     </div>
                 </div>
                 <div className="flex flex-row gap-16">
-                    <aside className="w-1/4">
+                    <aside className="w-1/4 hidden lg:block">
                         <CategoryFilter />
                         <CategoryPriceSlider />
                     </aside>
