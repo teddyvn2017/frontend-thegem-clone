@@ -6,6 +6,7 @@ import { IoIosSearch } from "react-icons/io";
 import { IoIosArrowDown } from "react-icons/io";
 import CategoryFilter from "../filters/CategoryFilter";
 import CategoryPriceSlider from "@/app/components/filters/CategoryPriceSlider";
+import MobileSidebar from "../filters/shared/MobileSidebar";
 
 type Props = {
     backgroundImage: string;
@@ -26,6 +27,8 @@ export default function CategoryTemplate({ backgroundImage, title, children }: P
     
     const [open, setOpen] = useState(false);
     const [selected, setSelected] = useState(sort_options[0]);
+    const [showSidebar, setShowSidebar] = useState(false);
+
     const dropdownVariants = {
         hidden: { opacity: 0, y: -10, transition: { duration: 0.2 } },
         visible: { opacity: 1, y: 0, transition: { duration: 0.3 } },
@@ -64,7 +67,9 @@ export default function CategoryTemplate({ backgroundImage, title, children }: P
                     <button className="lg:hidden flex flex-row items-center gap-2 border border-[#222]
                                         hover:bg-[#222] hover:text-white 
                                         rounded-full px-4 py-2 cursor-pointer
-                                        transition-colors duration-300">
+                                        transition-colors duration-300"
+                                        
+                        onClick={() => setShowSidebar(true)}>
                         <VscSettings className="text-base"/>
                         <span className="text-base">Show filter</span>
                     </button>
@@ -111,6 +116,15 @@ export default function CategoryTemplate({ backgroundImage, title, children }: P
                         </div>   
                     </div>
                 </div>
+
+                {/* Sidebar mobile */}
+                                {/* <MobileSidebar show={showSidebar} onClose={() => setShowSidebar(false)}> */}
+                <MobileSidebar show={showSidebar} onClose={() => setShowSidebar(false)}>
+                    <CategoryFilter />
+                    <CategoryPriceSlider />
+                </MobileSidebar>
+
+                {/* Sidebar desktop */}
                 <div className="flex flex-row gap-16">
                     <aside className="w-1/4 hidden lg:block">
                         <CategoryFilter />
