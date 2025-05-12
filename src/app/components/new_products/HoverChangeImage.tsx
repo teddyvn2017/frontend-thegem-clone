@@ -14,11 +14,11 @@ type HoverChangeImageProps = {
 	tag?:string;
   };
   
-  const HoverChangeImage = ({ src, hoverSrc,cate_name, alt, originalPrice, discountedPrice,isNew,tag }: HoverChangeImageProps) => {
+const HoverChangeImage = ({ src, hoverSrc,cate_name, alt, originalPrice, discountedPrice,isNew,tag }: HoverChangeImageProps) => {
     const discountPercentage = originalPrice > 0 ? Math.round(((originalPrice - discountedPrice) / originalPrice) * 100) : 0;
     const discountLabelStyle = {
         clipPath: 'polygon(0 0, 100% 0, 90% 100%, 0 100%)',
-      };
+    };
 
 	const formatPrice = (price: number) => `$${price.toFixed(2)}`;
 	// console.log('tag:', JSON.stringify(tag));  
@@ -69,7 +69,6 @@ type HoverChangeImageProps = {
 							 transition-opacity duration-600 opacity-0 group-hover/image_item:opacity-100"
 			/>
 
-
 			<div className="grid grid-rows-[auto_auto_auto] items-center justify-start gap-1 pt-2 w-full">
 				<h4 className="text-[12px] lg:text-sm font-normal text-left 
 									bg-[#222] text-gray-200 row-span-1 px-2 py-1">
@@ -82,7 +81,7 @@ type HoverChangeImageProps = {
 						{formatPrice(originalPrice)}
 					</h4>
 					{
-						discountedPrice > 0 && (
+						discountedPrice < originalPrice && discountedPrice > 0 && (
 							<h4 
 								className="text-[12px] lg:text-sm font-normal text-left text-[#222]">
 									{formatPrice(discountedPrice)}
@@ -94,7 +93,7 @@ type HoverChangeImageProps = {
         
       	</div>
     );
-  };
+};
   
-  export default HoverChangeImage;
+export default HoverChangeImage;
   

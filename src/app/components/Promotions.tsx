@@ -117,7 +117,8 @@ const Promotions = () => {
             </div>
            
            {/* Hiển thị danh sách sản phẩm */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 gap-8 
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 
+                            gap-x-8 gap-y-12
                             mt-8 mb-8 mx-auto px-8 lg:px-16 items-center justify-center">
                 {
                     visibleProducts.map((product) => (

@@ -1,9 +1,16 @@
+'use client'
 import { useEffect, useState } from "react";
-
+import HoverChangeImage from "../new_products/HoverChangeImage";
 type Product = {
     id: number;
     name: string;
+    image: string;
+    imageHover: string;
+    originalPrice: number;
+    discountedPrice: number;
     price: number;
+    isNew: boolean;
+    category: string;
 };
 
 type ProductListProps = {
@@ -12,6 +19,7 @@ type ProductListProps = {
 
 export default function ProductList({ categorySlug }: ProductListProps) {
     const [products, setProducts] = useState<Product[]>([]);
+    const [imgFolder, setImgFolder] = useState('categories/cheese-eggs');
 
     useEffect(() => {
         const fetchData = async () => {
@@ -23,20 +31,23 @@ export default function ProductList({ categorySlug }: ProductListProps) {
         } catch (err) {
             console.error(err);
             setProducts([]);
-        }
+            }
         };
 
         fetchData();
     }, [categorySlug]);
 
     return (
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-        {products.map((product) => (
-            <div key={product.id} className="p-4 border rounded shadow">
-            <h3 className="text-lg font-semibold">{product.name}</h3>
-            <p className="text-gray-600">${product.price.toFixed(2)}</p>
-            </div>
-        ))}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+            {
+                products.map((product) => (
+                   <HoverChangeImage key={product.id} src={`/img/${imgFolder}/${product.image}`} 
+                                    hoverSrc={`/img/${imgFolder}/${product.imageHover}`} alt={product.name} 
+                                    cate_name={product.category}
+                                    originalPrice = {product.originalPrice ?? 0} 
+                                    discountedPrice = {product.discountedPrice ?? 0}
+                                    isNew = {product.isNew ?? false} />)
+            )}
     </div>
   );
 }

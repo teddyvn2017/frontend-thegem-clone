@@ -1,7 +1,7 @@
 // app/category/[slug]/page.tsx
 import { notFound } from "next/navigation";
 import CategoryTemplate from "@/app/components/templates/CategoryTemplate";
-
+import ProductList from "@/app/components/products/ProductList";
 type Category = {
   category_slug: string;
   title: string;
@@ -28,7 +28,7 @@ export default async function CategoryPage({ params }: { params: { slug: string 
 				title={category.title}
 			>
 			{/* children nằm trong phần main của layout */}
-			<div>Danh sách sản phẩm hoặc nội dung chính</div>
+			<div><ProductList categorySlug={params.slug} /></div>
 			</CategoryTemplate>
 			
 		</>
