@@ -7,7 +7,7 @@
     "discountedPrice": 3.49,
     "discountPercent": 13,
     "image": "natural-lemonade.jpg",
-    "image2": "",
+    "imageHover": "",
     "hoverEffect": "zoom",
     "tag": "onsale",
     "isNew": false
@@ -20,7 +20,7 @@
     "discountedPrice": 11.99,
     "discountPercent": 3,
     "image": "red-onion.jpg",
-    "image2": "red-onion-hover.jpg",
+    "imageHover": "red-onion-hover.jpg",
     "hoverEffect": "changeImage",
     "tag": "onsale",
     "isNew": false
@@ -34,7 +34,7 @@
     "discountPercent": 8,
     "image": "buckwheat-honey.jpg",
     "hoverEffect": "changeImage",
-    "image2": "buckwheat-honey-hover.jpg",
+    "imageHover": "buckwheat-honey-hover.jpg",
     "tag": "onsale",
     "isNew": false
   },
@@ -46,7 +46,7 @@
     "discountedPrice": 13.99,
     "discountPercent": 10,
     "image": "green-tea.jpg",
-    "image2": "",
+    "imageHover": "",
     "hoverEffect": "zoom",
     "tag": "onsale",
     "isNew": false
@@ -59,7 +59,7 @@
     "discountedPrice": 3.49,
     "discountPercent": 13,
     "image": "lager-beer.jpg",
-    "image2": "lager-beer-hover.jpg",
+    "imageHover": "lager-beer-hover.jpg",
     "hoverEffect": "changeImage",
     "tag": "onsale",
     "isNew": false
@@ -72,7 +72,7 @@
     "discountedPrice": 14.99,
     "discountPercent": 21,
     "image": "spanish-oranges.jpg",
-    "image2": "spanish-oranges-hover.jpg",
+    "imageHover": "spanish-oranges-hover.jpg",
     "hoverEffect": "changeImage",
     "isNew": true,
     "tag": "onsale"
@@ -85,7 +85,7 @@
     "discountedPrice": 13.94,
     "discountPercent": 7,
     "image": "pineapple.jpg",
-    "image2": "pineapple-hover.jpg",
+    "imageHover": "pineapple-hover.jpg",
     "hoverEffect": "changeImage",
     "isNew": false,
     "tag": "on sale"
@@ -98,7 +98,7 @@
     "discountedPrice": 20.87,
     "discountPercent": 13,
     "image": "red-wine.jpg",
-    "image2": "red-wine-hover.jpg",
+    "imageHover": "red-wine-hover.jpg",
     "hoverEffect": "changeImage",
     "tag": "on sale",
     "isNew": false
@@ -111,7 +111,7 @@
     "discountedPrice": 7.79,
     "discountPercent": 22,
     "image": "cooking-oil.jpg",
-    "image2": "",
+    "imageHover": "",
     "hoverEffect": "zoom",
     "tag": "on sale",
     "isNew": false
@@ -124,7 +124,7 @@
     "discountedPrice": 10.79,
     "discountPercent": 10,
     "image": "white-mushroom.jpg",
-    "image2": "white-mushroom-hover.jpg",
+    "imageHover": "white-mushroom-hover.jpg",
     "hoverEffect": "changeImage",
     "tag": "on sale",
     "isNew": false
@@ -137,7 +137,7 @@
     "discountedPrice": 14.99,
     "discountPercent": 11,
     "image": "yellow-smoothie.jpg",
-    "image2": "",
+    "imageHover": "",
     "hoverEffect": "zoom",
     "tag": "onsale",
     "isNew": false
@@ -150,7 +150,7 @@
     "discountedPrice": 6.15,
     "discountPercent": 12,
     "image": "tinned-fish.jpg",
-    "image2": "",
+    "imageHover": "",
     "hoverEffect": "zoom",
     "tag": "onsale",
     "isNew": false

@@ -7,7 +7,7 @@
       "discountedPrice": 3.49,
       "discountPercent": 13,
       "image": "burgundy-red-wine.jpg",
-      "image2": "burgundy-red-wine-hover.jpg",
+      "imageHover": "burgundy-red-wine-hover.jpg",
       "hoverEffect": "changeImage",
       "tag": "top_sellers"
     },
@@ -30,7 +30,7 @@
       "discountedPrice": 45.63,
       "discountPercent": 8,
       "image": "dark-beer.jpg",
-      "image2": "dark-beer-hover.jpg",
+      "imageHover": "dark-beer-hover.jpg",
       "hoverEffect": "changeImage",      
       "tag": "top_sellers"
     },
@@ -42,7 +42,7 @@
       "discountedPrice": 13.99,
       "discountPercent": 10,
       "image": "dark-craft-beer.jpg",
-      "image2": "dark-craft-beer-hover.jpg",
+      "imageHover": "dark-craft-beer-hover.jpg",
       "hoverEffect": "changeImage",     
       "tag": "top_sellers"
     },
@@ -54,7 +54,7 @@
       "discountedPrice": 3.49,
       "discountPercent": 13,
       "image": "dry-rose-wine.jpg",
-      "image2": "dry-rose-wine-hover.jpg",
+      "imageHover": "dry-rose-wine-hover.jpg",
       "hoverEffect": "changeImage",
       "tag": "top_sellers"
     },
@@ -66,7 +66,7 @@
       "discountedPrice": 14.99,
       "discountPercent": 21,
       "image": "larger-beer.jpg",
-      "image2": "larger-beer-hover.jpg",
+      "imageHover": "larger-beer-hover.jpg",
       "hoverEffect": "changeImage",
       "isNew": true,
       "tag": "top_sellers"
@@ -79,7 +79,7 @@
       "discountedPrice": 13.94,
       "discountPercent": 7,
       "image": "red-wine.jpg",
-      "image2": "red-wine-hover.jpg",
+      "imageHover": "red-wine-hover.jpg",
       "hoverEffect": "changeImage",
       "isNew": false,
       "tag": "top_sellers"
@@ -92,7 +92,7 @@
       "discountedPrice": 20.87,
       "discountPercent": 13,
       "image": "gold-beer.jpg",
-      "image2": "gold-beer-hover.jpg",
+      "imageHover": "gold-beer-hover.jpg",
       "hoverEffect": "changeImage",
       "tag": "top_sellers"
     },
@@ -104,7 +104,7 @@
       "discountedPrice": 7.79,
       "discountPercent": 22,
       "image": "gold-craft-beer.jpg",
-      "image2": "gold-craft-beer-hover.jpg",
+      "imageHover": "gold-craft-beer-hover.jpg",
       "hoverEffect": "changeImage",
       "tag": "top_sellers"
     },
@@ -116,7 +116,7 @@
       "discountedPrice": 10.79,
       "discountPercent": 10,
       "image": "green-beer.jpg",
-      "image2": "green-beer-hover.jpg",
+      "imageHover": "green-beer-hover.jpg",
       "hoverEffect": "changeImage",
       "tag": "top_sellers"
     },
@@ -128,7 +128,7 @@
       "discountedPrice": 7.99,
       "discountPercent": 11,
       "image": "green-craft-beer.jpg",
-      "image2": "green-craft-beer-hover.jpg",
+      "imageHover": "green-craft-beer-hover.jpg",
       "hoverEffect": "changeImage",
       "tag": "top_sellers"
     },
@@ -140,7 +140,7 @@
       "discountedPrice": 6.15,
       "discountPercent": 12,
       "image": "premium-red-wine.jpg",
-      "image2": "premium-red-wine-hover.jpg",
+      "imageHover": "premium-red-wine-hover.jpg",
       "hoverEffect": "changeImage",
       "tag": "top_sellers"
     }

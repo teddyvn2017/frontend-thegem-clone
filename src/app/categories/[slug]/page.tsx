@@ -32,5 +32,5 @@ export default async function CategoryPage({ params }: { params: { slug: string 
 			</CategoryTemplate>
 			
 		</>
-  );
+  	);
 }

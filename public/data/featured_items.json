@@ -6,7 +6,7 @@
         "originalPrice": 23.34,    
         "discountedPrice": 0,
         "image": "petiolate_celery1.jpg",
-        "image2": "petiolate_celery2.jpg",
+        "imageHover": "petiolate_celery2.jpg",
         "hoverEffect": "changeImage",
         "isNew": false
     },
@@ -17,7 +17,7 @@
         "originalPrice": 23.99,   
         "discountedPrice": 0, 
         "image": "chili1.jpg",
-        "image2": "chili2.jpg",
+        "imageHover": "chili2.jpg",
         "hoverEffect": "changeImage",
         "isNew": false
     },
@@ -28,7 +28,7 @@
         "originalPrice":13.75,   
         "discountedPrice":9.99, 
         "image": "banana1.jpg",
-        "image2": "banana2.jpg",
+        "imageHover": "banana2.jpg",
         "hoverEffect": "changeImage",
         "isNew":true
     },
@@ -39,7 +39,7 @@
         "originalPrice": 5.29,
         "discountedPrice": 0,   
         "image": "baguette1.jpg",
-        "image2": "baguette2.jpg",
+        "imageHover": "baguette2.jpg",
         "hoverEffect": "changeImage",
         "isNew": false        
     }    

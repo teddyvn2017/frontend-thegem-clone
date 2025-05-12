@@ -11,7 +11,7 @@ interface Product {
     discountedPrice?: number;
     discountPercent?: number;
     image: string;
-    image2?: string;
+    imageHover?: string;
     hoverEffect?: string;
     hoverImage?: string;
     tag: string;
@@ -121,9 +121,9 @@ const Promotions = () => {
                             mt-8 mb-8 mx-auto px-8 lg:px-16 items-center justify-center">
                 {
                     visibleProducts.map((product) => (
-                        product.hoverEffect === 'changeImage' && product.image2 ? (
+                        product.hoverEffect === 'changeImage' && product.imageHover ? (
                             <HoverChangeImage key={product.id} src={`/img/${imgFolder}/${product.image}`} 
-                                    hoverSrc={`/img/${imgFolder}/${product.image2}`} alt={product.name} 
+                                    hoverSrc={`/img/${imgFolder}/${product.imageHover}`} alt={product.name} 
                                     cate_name={product.category}
                                     originalPrice = {product.originalPrice ?? 0} 
                                     discountedPrice = {product.discountedPrice ?? 0}
