@@ -10,7 +10,8 @@
     "imageHover": "",
     "hoverEffect": "zoom",
     "tag": "onsale",
-    "isNew": false
+    "isNew": false,
+    "slug": "natural-lemonade"
   },
   {
     "id": 2,
@@ -23,7 +24,8 @@
     "imageHover": "red-onion-hover.jpg",
     "hoverEffect": "changeImage",
     "tag": "onsale",
-    "isNew": false
+    "isNew": false,
+    "slug": "red-onion"
   },
   {
     "id": 3,
@@ -36,7 +38,8 @@
     "hoverEffect": "changeImage",
     "imageHover": "buckwheat-honey-hover.jpg",
     "tag": "onsale",
-    "isNew": false
+    "isNew": false,
+    "slug": "natural-buckwheat-honey"
   },
   {
     "id": 4,
@@ -49,7 +52,8 @@
     "imageHover": "",
     "hoverEffect": "zoom",
     "tag": "onsale",
-    "isNew": false
+    "isNew": false,
+    "slug": "green-tea"
   },
   {
     "id": 5,
@@ -62,7 +66,8 @@
     "imageHover": "lager-beer-hover.jpg",
     "hoverEffect": "changeImage",
     "tag": "onsale",
-    "isNew": false
+    "isNew": false,
+    "slug": "lager-beer"
   },
   {
     "id": 6,
@@ -75,7 +80,8 @@
     "imageHover": "spanish-oranges-hover.jpg",
     "hoverEffect": "changeImage",
     "isNew": true,
-    "tag": "onsale"
+    "tag": "onsale",
+    "slug": "spanish-oranges"
   },
   {
     "id": 7,
@@ -88,7 +94,8 @@
     "imageHover": "pineapple-hover.jpg",
     "hoverEffect": "changeImage",
     "isNew": false,
-    "tag": "on sale"
+    "tag": "on sale",
+    "slug": "pineapple"
   },
   {
     "id": 8,
@@ -101,7 +108,8 @@
     "imageHover": "red-wine-hover.jpg",
     "hoverEffect": "changeImage",
     "tag": "on sale",
-    "isNew": false
+    "isNew": false,
+    "slug": "red-wine"
   },
   {
     "id": 9,
@@ -114,7 +122,8 @@
     "imageHover": "",
     "hoverEffect": "zoom",
     "tag": "on sale",
-    "isNew": false
+    "isNew": false,
+    "slug": "cooking-oil"
   },
   {
     "id": 10,
@@ -127,7 +136,8 @@
     "imageHover": "white-mushroom-hover.jpg",
     "hoverEffect": "changeImage",
     "tag": "on sale",
-    "isNew": false
+    "isNew": false,
+    "slug": "white-mushroom"
   },
   {
     "id": 11,
@@ -140,7 +150,8 @@
     "imageHover": "",
     "hoverEffect": "zoom",
     "tag": "onsale",
-    "isNew": false
+    "isNew": false,
+    "slug": "fruit-syrup"
   },
   {
     "id": 12,
@@ -153,6 +164,7 @@
     "imageHover": "",
     "hoverEffect": "zoom",
     "tag": "onsale",
-    "isNew": false
+    "isNew": false,
+    "slug": "tinned-fish"
   }
 ]

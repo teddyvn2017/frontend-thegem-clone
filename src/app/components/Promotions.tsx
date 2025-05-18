@@ -2,6 +2,7 @@
 import { useState,useEffect} from 'react';
 import ZoomImage from './promotions/ZoomImage';
 import HoverChangeImage from './promotions/HoverChangeImage';
+import Link from 'next/link';
 
 interface Product {
     id: number;
@@ -16,6 +17,7 @@ interface Product {
     hoverImage?: string;
     tag: string;
     isNew?: boolean;
+    slug:string;
 }   
 
 
@@ -116,25 +118,41 @@ const Promotions = () => {
                
             </div>
            
-           {/* Hiển thị danh sách sản phẩm */}
+            {/* Hiển thị danh sách sản phẩm */}
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 
                             gap-x-8 gap-y-12
                             mt-8 mb-8 mx-auto px-8 lg:px-16 items-center justify-center">
                 {
-                    visibleProducts.map((product) => (
-                        product.hoverEffect === 'changeImage' && product.imageHover ? (
-                            <HoverChangeImage key={product.id} src={`/img/${imgFolder}/${product.image}`} 
-                                    hoverSrc={`/img/${imgFolder}/${product.imageHover}`} alt={product.name} 
-                                    cate_name={product.category}
-                                    originalPrice = {product.originalPrice ?? 0} 
-                                    discountedPrice = {product.discountedPrice ?? 0}
-                                    isNew = {product.isNew ?? false} />) 
-                            : (<ZoomImage key={product.id} src={`/img/${imgFolder}/${product.image}`} 
-                                    alt={product.name} cate_name={product.category}
-                                    originalPrice = {product.originalPrice ?? 0} 
-                                    discountedPrice = {product.discountedPrice ?? 0}
-                                    isNew = {product.isNew ?? false} />)
-                    ))
+                    visibleProducts.map((product) => {
+
+                        const imageProps = {
+                            src: `/img/${imgFolder}/${product.image}`,
+                            alt: product.name,
+                            cate_name: product.category,
+                            originalPrice: product.originalPrice ?? 0,
+                            discountedPrice: product.discountedPrice ?? 0,
+                            isNew: product.isNew ?? false,
+                            slug: product.slug
+                        };
+
+                        if (product.hoverEffect === 'changeImage' && product.imageHover) {
+                            return (
+                                <Link href={`/product/${product.slug}`} key={product.id}>                                   
+                                    <HoverChangeImage key={product.id} 
+                                        {...imageProps} 
+                                        hoverSrc={`/img/${imgFolder}/${product.imageHover}`} />
+                                </Link>
+                            )
+                        }
+
+                        else {
+                            return (                                
+                                <Link href={`/product/${product.slug}`} key={product.id}>
+                                    <ZoomImage {...imageProps} />    
+                                </Link>
+                            )
+                        }
+                    })
                 }     
            </div>
         </section>

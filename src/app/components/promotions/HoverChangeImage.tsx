@@ -42,6 +42,7 @@ return (
 										duration-200 z-20" />
 						
 		</div>
+		
 		<img
 			src={src}
 			alt={alt}
