@@ -1,6 +1,6 @@
 'use client'
 import { useParams } from 'next/navigation';
-import { FaTag } from "react-icons/fa6";
+import { FaFacebookF, FaInstagram, FaTwitter } from "react-icons/fa";
 const ProductDetail = () => {
     const params = useParams();
     const slug = params.slug;
@@ -30,7 +30,9 @@ const ProductDetail = () => {
                         </div>
                         <button className='bg-[#222] text-white py-2 px-8 rounded-full'>Add to cart</button>
                     </div>
+                    {/* category */}
                     <h3 className='text-base mt-2'>Categories:<span className='text-gray-700 pl-2'>Other</span></h3>
+                    {/* tags */}
                     <div className="flex flex-row flex-wrap items-center gap-2 max-w-max">
                         <span className="text-gray-700">Tags:</span>
                         <div className="flex flex-row gap-8 ml-4">
@@ -76,6 +78,12 @@ const ProductDetail = () => {
                                 <p className="px-4 text-sm font-normal text-gray-500 absolute z-20 group-hover:text-white">Well Balanced</p>
                             </div>
                         </div>
+                    </div>
+                    {/* social */}
+                    <div className='flex flex-row gap-4 mt-4 cursor-pointer'>
+                        <FaFacebookF className='hover:text-[#3b5998] transition-colors duration-300'/>
+                        <FaTwitter className='hover:text-[#1da1f2] transition-colors duration-300'/>
+                        <FaInstagram className='hover:text-[#c13584] transition-colors duration-300' />
                     </div>
                 </div>                
             </div>
