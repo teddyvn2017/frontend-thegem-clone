@@ -27,3 +27,16 @@
 .custom-swiper-button-next {
     right: 48px;
 }
+
+
+/* Ẩn các nút tăng/giảm mặc định trên trình duyệt Chrome, Safari, Edge */
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+/* Ẩn các nút tăng/giảm mặc định trên trình duyệt Firefox */
+input[type="number"] {
+    -moz-appearance: textfield;
+}
