@@ -1,9 +1,15 @@
 'use client'
 import { useParams } from 'next/navigation';
 import { FaFacebookF, FaInstagram, FaTwitter } from "react-icons/fa";
+import React, { useState } from 'react';
+
 const ProductDetail = () => {
     const params = useParams();
     const slug = params.slug;
+    const [activeTab, setActiveTab] = useState('description');
+    const handleTabClick = (tab:string) => {
+        setActiveTab(tab);
+    }
 
     return (
         <div className='mx-auto mt-10 px-8 lg:px-16'>
@@ -11,7 +17,7 @@ const ProductDetail = () => {
                 <img 
                     className='w-full lg:w-1/2'
                     src="https://images.unsplash.com/photo-1683314573424-b0da0c795a07?q=80&w=3270&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="" />
-                {/* info */}
+                {/* detail's product */}
                 <div className='flex flex-col gap-2.5 text-[#222] items-start'>
                     <h2 className='text-2xl'>Blue Cheese</h2>
                     <h3 className='text-base'>Impression</h3>
@@ -87,7 +93,59 @@ const ProductDetail = () => {
                     </div>
                 </div>                
             </div>
-            
+            {/* information */}
+            <div className="border-b border-gray-200 mt-14">
+                <nav className="-mb-px flex space-x-6 justify-center" aria-label="Tabs">
+                    <button 
+                        id="tab-description"
+                        className={`whitespace-nowrap border-b-2  
+                                        py-4 px-1 text-sm font-medium  
+                                        focus:outline-none cursor-pointer
+                                    ${activeTab === 'description' ? 'border-[#222] text-[#222]' 
+                                    : 'border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700'}`}
+                        onClick={() => handleTabClick('description')}                
+                        >
+                        DESCRIPTION
+                    </button>
+                    <button 
+                        id="tab-additional-info"
+                        className={`whitespace-nowrap border-b-2 py-4 px-1 text-sm font-medium 
+                                        focus:outline-none cursor-pointer
+                                        ${activeTab === 'additional-info' ? ' text-[#222]'
+                                        : 'border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700'}`}                            
+                        onClick={() => handleTabClick('additional-info')}
+                        >
+                        ADDITIONAL INFO
+                    </button>
+                    <button 
+                        id="tab-reviews"
+                        className={`whitespace-nowrap border-b-2  py-4 px-1 text-sm font-medium 
+                                    focus:outline-none
+                                    ${activeTab === 'reviews' ? 'border-[#222] text-[#222]' 
+                                    : 'border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700'}`}
+                        onClick={() => handleTabClick('reviews')}
+                    >
+                        REVIEWS
+                    </button>
+                </nav>
+            </div>
+            {activeTab === 'description' && (
+                <div className="p-4 mt-4">
+                    Nội dung cho tab DESCRIPTION sẽ hiển thị ở đây...
+                </div>
+            )}
+
+            {activeTab === 'additional-info' && (
+                <div className="p-4 mt-4">
+                    Nội dung cho tab ADDITIONAL INFO...
+                </div>
+                )}
+
+            {activeTab === 'reviews' && (
+                <div className="p-4 mt-4">
+                    Nội dung cho tab REVIEWS...
+                </div>
+            )}
         </div>
     );
 };
