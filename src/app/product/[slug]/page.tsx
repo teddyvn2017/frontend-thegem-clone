@@ -2,14 +2,41 @@
 import { useParams } from 'next/navigation';
 import { FaFacebookF, FaInstagram, FaTwitter } from "react-icons/fa";
 import React, { useState } from 'react';
-
+import { TiStarFullOutline } from "react-icons/ti";
+import { FaStarHalf } from "react-icons/fa";
+import { motion } from 'framer-motion';
 const ProductDetail = () => {
     const params = useParams();
     const slug = params.slug;
     const [activeTab, setActiveTab] = useState('description');
+    const [quantity, setQuantity] = useState(1);
+
+    const tabs = [
+        { id: 'description', label: 'DESCRIPTION' },
+        { id: 'additional-info', label: 'ADDITIONAL INFO' },
+        { id: 'reviews', label: 'REVIEWS' },
+    ];
+
+    const handleQuantityChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+        const newQuantity = parseInt(event.target.value, 10);
+        setQuantity(newQuantity);
+    }
+
+
     const handleTabClick = (tab:string) => {
         setActiveTab(tab);
     }
+
+    const handleDecrement = () => {
+        if (quantity > 1) {
+            setQuantity(quantity - 1);
+        }
+    }
+    
+    const handleIncrement = () => {
+        setQuantity(quantity + 1);
+    }
+
 
     return (
         <div className='mx-auto mt-10 px-8 lg:px-16'>
@@ -29,7 +56,9 @@ const ProductDetail = () => {
                             <div className="flex items-center">
                                 <div className="border-r h-4 text-gray-400"></div>  
                                     <input type="number" 
-                                            className="w-16 text-center focus:outline-none appearance-none text-base" value="1" />
+                                            className="w-16 text-center focus:outline-none appearance-none text-base" 
+                                            onChange={handleQuantityChange}
+                                            value={quantity} />
                                 <div className="border-l h-4 text-gray-400"></div> 
                             </div>                          
                             <button className="px-2 py-1 rounded-r cursor-pointer text-xl">+</button>
@@ -47,7 +76,7 @@ const ProductDetail = () => {
                                 <div className="absolute w-full h-full border-0 bg-[#ecececff] 
                                                 rounded-l-md border-l-0 rounded-r-md 
                                                 group-hover:bg-[#222] transition-colors duration-300"></div>
-                                <div className="absolute top-[3px] -left-[10px] border-b-0 border-r-0 
+                                <div className="absolute top-[3px] -left-[10px] 0 border-r-0 
                                                 w-[28px] h-[28px] border-0 bg-[#ecececff] rounded-lg -rotate-45 
                                                 group-hover:bg-[#222] transition-colors duration-300"></div>
                                 <div className="absolute top-[12px] left-0 w-[12px] h-[12px] bg-gray-300 rounded-full 
@@ -95,58 +124,166 @@ const ProductDetail = () => {
             </div>
             {/* information */}
             <div className="border-b border-gray-200 mt-14">
-                <nav className="-mb-px flex space-x-6 justify-center" aria-label="Tabs">
-                    <button 
-                        id="tab-description"
-                        className={`whitespace-nowrap border-b-2  
-                                        py-4 px-1 text-sm font-medium  
-                                        focus:outline-none cursor-pointer
-                                    ${activeTab === 'description' ? 'border-[#222] text-[#222]' 
-                                    : 'border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700'}`}
-                        onClick={() => handleTabClick('description')}                
+                <nav className="relative flex space-x-6 justify-center border-b border-gray-200">
+                    {tabs.map((tab) => (
+                        <button
+                            key={tab.id}
+                            onClick={() => setActiveTab(tab.id)}
+                            className={`relative py-4 px-1 text-sm font-medium focus:outline-none cursor-pointer ${
+                                activeTab === tab.id
+                                ? 'text-[#222]'
+                                : 'text-gray-500 hover:text-gray-700'
+                            }`}
                         >
-                        DESCRIPTION
-                    </button>
-                    <button 
-                        id="tab-additional-info"
-                        className={`whitespace-nowrap border-b-2 py-4 px-1 text-sm font-medium 
-                                        focus:outline-none cursor-pointer
-                                        ${activeTab === 'additional-info' ? ' text-[#222]'
-                                        : 'border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700'}`}                            
-                        onClick={() => handleTabClick('additional-info')}
-                        >
-                        ADDITIONAL INFO
-                    </button>
-                    <button 
-                        id="tab-reviews"
-                        className={`whitespace-nowrap border-b-2  py-4 px-1 text-sm font-medium 
-                                    focus:outline-none
-                                    ${activeTab === 'reviews' ? 'border-[#222] text-[#222]' 
-                                    : 'border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700'}`}
-                        onClick={() => handleTabClick('reviews')}
-                    >
-                        REVIEWS
-                    </button>
+                        {tab.label}
+
+                        {activeTab === tab.id && (
+                            <motion.div
+                                layoutId="tab-underline"
+                                className="absolute left-0 right-0 -bottom-[1px] h-[2px] bg-[#222]"
+                                transition={{ type: 'spring', stiffness: 500, damping: 30 }}
+                            />
+                        )}
+                        </button>
+                    ))}
                 </nav>
             </div>
             {activeTab === 'description' && (
-                <div className="p-4 mt-4">
-                    Nội dung cho tab DESCRIPTION sẽ hiển thị ở đây...
+                <div className="p-4 mt-4 flex flex-col md:flex-row gap-4 md:gap-8">
+                    <img src = "/img/orange.jpg" alt="product" className="w-1/4" />
+                    <p className='w-2/4 text-base lg:text-sm leading-7'>
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud sit amet exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste adipisicing elit, sed do eiusmod tempor incididunt
+                    </p>
+                    <table className="border-collapse w-1/4 text-base lg:text-sm">
+                        <tbody>
+                            <tr className="border-gray-300">
+                                <td className="pb-2 px-4">Energy</td>
+                                <td className="py-2 px-4 text-right">356 kcal</td>
+                            </tr>
+                            <tr className="border-gray-300">
+                                <td className="py-2 px-4">Fat</td>
+                                <td className="py-2 px-4 text-right">1.5g</td>
+                            </tr>
+                            <tr className="border-gray-300">
+                                <td className="py-2 px-4">Carbohydrate</td>
+                                <td className="py-2 px-4 text-right">72.0g</td>
+                            </tr>
+                            <tr className="border-gray-300">
+                                <td className="py-2 px-4">Fibre</td>
+                                <td className="py-2 px-4 text-right">3.0g</td>
+                            </tr>
+                            <tr className="border-gray-300">
+                                <td className="py-2 px-4">Protein:</td>
+                                <td className="py-2 px-4 text-right">12.0g</td>
+                            </tr>
+                            <tr>
+                                <td className="py-2 px-4">Salt:</td>
+                                <td className="py-2 px-4 text-right">&lt;0.01g</td>
+                            </tr>
+                        </tbody>
+                    </table>
                 </div>
             )}
 
             {activeTab === 'additional-info' && (
                 <div className="p-4 mt-4">
-                    Nội dung cho tab ADDITIONAL INFO...
+                    <table className="border-collapse w-1/2 text-base lg:text-sm">
+                        <tbody>
+                            <tr className="border-gray-300">
+                                <td className="pb-2 px-4 font-bold">Brand</td>
+                                <td className="py-2 px-4 text-left">Lia Botelli</td>
+                            </tr>
+                            <tr className="border-gray-300">
+                                <td className="py-2 px-4 font-bold">Lifestyle & Dietary</td>
+                                <td className="py-2 px-4 text-left">Cholesterol Free, Fat Free, Low Carb, No Lactose</td>
+                            </tr>
+                            <tr className="border-gray-300">
+                                <td className="py-2 px-4 font-bold">Origin</td>
+                                <td className="py-2 px-4 text-left">72.0g</td>
+                            </tr>                            
+                        </tbody>
+                    </table>
                 </div>
                 )}
 
             {activeTab === 'reviews' && (
-                <div className="p-4 mt-4">
-                    Nội dung cho tab REVIEWS...
+                <div className="p-4 mt-4 flex flex-col lg:flex-row gap-8">
+                    <div className='w-full lg:w-1/2'>
+                        <h2 className="text-2xl font-bold mb-4">Reviews</h2>
+                        <div className='mt-4 flex flex-col'>
+                            <div className='flex flex-col py-2'>
+                                <h4 className='font-bold text-sm text-[#222]'>Steve</h4>
+                                <div className='flex flex-row items-center gap-2 mt-2 text-yellow-400 text-xs'>
+                                    <TiStarFullOutline />
+                                    <TiStarFullOutline />
+                                    <TiStarFullOutline />
+                                    <TiStarFullOutline />
+                                    <FaStarHalf />
+                                </div>
+                                <p className='text-xs mt-2 text-gray-400 leading-5  '>
+                                    Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste adipisicing elit, sed do eiusmod tempor incididunt
+                                </p>
+                            </div>
+                            <div className='flex flex-col py-2'>
+                                <h4 className='font-bold text-sm text-[#222]'>John</h4>
+                                <div className='flex flex-row items-center gap-2 mt-2 text-yellow-400 text-xs'>
+                                    <TiStarFullOutline />
+                                    <TiStarFullOutline />
+                                    <TiStarFullOutline />
+                                    <TiStarFullOutline />
+                                </div>
+                                <p className='text-xs mt-2 text-gray-400 leading-5  '>
+                                    Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste adipisicing elit, sed do eiusmod tempor incididunt
+                                </p>
+                            </div>
+
+                            <div className='flex flex-col py-2'>
+                                <h4 className='font-bold text-sm text-[#222]'>Branca</h4>
+                                <div className='flex flex-row items-center gap-2 mt-2 text-yellow-400 text-xs'>
+                                    <TiStarFullOutline />
+                                    <TiStarFullOutline />
+                                    <TiStarFullOutline />
+                                    <TiStarFullOutline />
+                                </div>
+                                <p className='text-xs mt-2 text-gray-400 leading-5  '>
+                                    Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste adipisicing elit, sed do eiusmod tempor incididunt
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    {/* form submit review */}
+                    <div className='w-full lg:w-1/2'>
+                        <h2 className='text-2xl uppercase font-light'>Add a review</h2>
+                        <div>
+                            <ul>
+                                <li>
+                                    Your rating *
+                                </li>
+                                <li>*****</li>
+                            </ul>
+                            <ul>
+                                <li>
+                                    Your review *
+                                </li>
+                                <li>
+                                    <textarea name="customer_review" id="customer_review"></textarea>
+                                </li>
+                            </ul>
+                        </div>
+                        
+                    </div>
                 </div>
             )}
+
+            {/* You may also like */}
+            <div className='mt-16 flex flex-col md:flex-row gap-8 lg:gap-16'>
+
+            </div>
         </div>
+
+
     );
 };
 

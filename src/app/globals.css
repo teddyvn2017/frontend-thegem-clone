@@ -1,5 +1,6 @@
 @import "tailwindcss";
 
+
 .swiper-container-custom {
     position: relative; /* Để định vị tuyệt đối cho các nút */    
     width:100%;
