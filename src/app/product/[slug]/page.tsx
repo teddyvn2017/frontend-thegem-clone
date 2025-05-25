@@ -24,6 +24,7 @@ interface Product {
     tag: string;
     isNew?: boolean;
     slug:string;
+    
 } 
 
 const ProductDetail = () => {

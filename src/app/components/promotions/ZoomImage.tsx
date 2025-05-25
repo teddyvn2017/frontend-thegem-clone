@@ -47,8 +47,9 @@ const ZoomImage = ({src,alt,cate_name,originalPrice,discountedPrice,isNew}:ZoomI
                     src={src}
                     alt={alt}
                     className="object-cover mb-2 max-h-[280px] lg:max-h-[300px] transition-transform duration-300 group-hover/image_item:scale-110 cursor-pointer"
-                />            
-                <div className="grid grid-rows-[auto_auto_auto] items-center gap-0 pt-2">
+                />  
+                        
+                <div className="grid grid-rows-[auto_auto_auto] items-center gap-1 pt-1 pb-2">
                     <h4 className="text-[12px] lg:text-sm font-normal text-center text-gray-400 row-span-1">{cate_name}</h4>
                     <h3 className="text-sm lg:text-base font-normal text-center row-span-1">{alt}</h3>
                     <div className="flex flex-row gap-1 justify-center items-center">

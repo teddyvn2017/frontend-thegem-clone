@@ -72,7 +72,7 @@ const HoverChangeImage = ({ src, hoverSrc,cate_name, alt, originalPrice, discoun
 			/>
 
 			<div className="grid grid-rows-[auto_auto_auto] items-center justify-start gap-1 pt-2 w-full">
-				<h4 className="text-[12px] lg:text-sm font-normal text-left 
+				<h4 className="text-[12px] lg:text-sm font-normal text-left w-fit
 									bg-[#222] text-gray-200 row-span-1 px-2 py-1">
 					{cate_name}	
 				</h4>
@@ -85,7 +85,7 @@ const HoverChangeImage = ({ src, hoverSrc,cate_name, alt, originalPrice, discoun
 					{
 						discountedPrice < originalPrice && discountedPrice > 0 && (
 							<h4 
-								className="text-[12px] lg:text-sm font-normal text-left text-[#222]">
+								className="text-[12px] lg:text-sm font-normal text-left text-[#222] w-fit px-2">
 									{formatPrice(discountedPrice)}
 							</h4>
 						)

@@ -10,7 +10,7 @@ type ZoomImageProps = {
     maxPrice?: number;
     discountedPrice: number;
     isNew?: boolean;
-    tag: string;    
+    tag?: string;    
 }
 
 const ZoomImage = ({src,alt,cate_name,originalPrice,maxPrice,discountedPrice, isNew, tag}:ZoomImageProps) => {

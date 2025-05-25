@@ -10,7 +10,7 @@ interface FeaturedItem {
     originalPrice?: number;
     discountedPrice?: number;        
     image: string;
-    image2?: string;
+    imageHover?: string;
     hoverEffect?: string;
     hoverImage?: string;
     tag: string;
@@ -45,7 +45,7 @@ const FeaturedItems = () => {
                         {
                             featuredItems.map((item) => (
                                 <HoverChangeImage key={item.id} src={`/img/${item.image}`} 
-                                        hoverSrc={`/img/${item.image2}`} alt={item.name} 
+                                        hoverSrc={`/img/${item.imageHover}`} alt={item.name} 
                                         cate_name={item.category}
                                         originalPrice = {item.originalPrice ?? 0} 
                                         discountedPrice = {item.discountedPrice ?? 0}
