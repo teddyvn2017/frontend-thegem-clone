@@ -34,20 +34,22 @@ const HoverChangeImage = ({ src, hoverSrc,cate_name, alt, originalPrice, discoun
 				}
 					
 				{/* icon heart */}
-				<div className="group/heart absolute top-4 right-4 z-10 rounded-full w-8 h-8
+				<div className="group/heart absolute top-4 right-4 z-20 rounded-full w-8 h-8
 								bg-white flex flex-col items-center justify-center
-								opacity-0 group-hover/image_item:opacity-100
-								hover:bg-[#222] transition-colors duration-300 cursor-pointer">
+								opacity-0 scale-75 group-hover/image_item:opacity-100 group-hover/image_item:scale-100
+								group-hover/heart:scale-100 ease-in-out transition-all
+								hover:bg-[#222] duration-300 cursor-pointer">
 					<AiOutlineHeart className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 
 												text-normal z-10 text-[#222] group-hover/heart:text-white 
 												transition-colors duration-300" />
 				</div>
 
 				{/* icon bag */}
-				<div className="group/bag absolute top-4 right-14 z-10 rounded-full w-8 h-8
+				<div className="group/bag absolute top-4 right-14 z-20 rounded-full w-8 h-8
 								bg-white flex flex-col items-center justify-center
-								opacity-0 group-hover/image_item:opacity-100
-								hover:bg-[#222] transition-colors duration-300 cursor-pointer">
+								opacity-0 scale-80 group-hover/image_item:opacity-100 group-hover/image_item:scale-100
+								group-hover/bag:scale-100 ease-in-out transition-all
+								hover:bg-[#222] duration-300 cursor-pointer">
 
 					<BsBag className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 
 												text-normal z-10 text-[#222] group-hover/bag:text-white 
@@ -77,7 +79,7 @@ const HoverChangeImage = ({ src, hoverSrc,cate_name, alt, originalPrice, discoun
 				<h3 className="row-span-1 text-sm lg:text-base font-normal text-left">{alt}</h3>
 				<div className="row-span-1 flex flex-row gap-1 justify-start items-center">
 					
-					<h4 className={`text-[12px] lg:text-sm font-normal text-center text-gray-400 ${discountedPrice > 0 ? 'line-through' : ''}`}>
+					<h4 className={`text-[12px] lg:text-sm font-normal text-center text-gray-400 w-fit px-2 ${discountedPrice > 0 ? 'line-through' : ''}`}>
 						{formatPrice(originalPrice)}
 					</h4>
 					{

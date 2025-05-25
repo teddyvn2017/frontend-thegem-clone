@@ -18,7 +18,9 @@
         "name": "next"
       }
     ],
-    "paths": {
+    "baseUrl": ".", 
+    "paths": {      
+      // "@components/*": ["app/components/*"], // <-- Alias cho thư mục components
       "@/*": ["./src/*"]
     }
   },

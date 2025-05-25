@@ -34,16 +34,18 @@ const ZoomImage = ({src,alt,cate_name,originalPrice,maxPrice,discountedPrice, is
                     }                                    
                     <div className="group/heart absolute top-4 right-4 z-10 rounded-full w-8 h-8
                                     bg-white flex flex-col items-center justify-center
-                                    opacity-0 group-hover/image_item:opacity-100 
-                                    hover:bg-[#222] transition-colors duration-300 cursor-pointer">
+                                    opacity-0 scale-75 group-hover/image_item:opacity-100 
+                                    group-hover/image_item:scale-100 ease-in-out
+                                    hover:bg-[#222] transition-all duration-300 cursor-pointer">
                         <AiOutlineHeart className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 
                                                     text-normal text-[#222] group-hover/heart:text-white transition-colors 
                                                     duration-300 z-20" />
                     </div>
                     <div className="group/bag absolute top-4 right-14 z-10 rounded-full w-8 h-8
                                     bg-white flex flex-col items-center justify-center
-                                    opacity-0 group-hover/image_item:opacity-100 
-                                        hover:bg-[#222] transition-colors duration-300 cursor-pointer">
+                                    opacity-0 scale-75 group-hover/image_item:opacity-100 
+                                    group-hover/image_item:scale-100 ease-in-out
+                                        hover:bg-[#222] transition-all duration-300 cursor-pointer">
                         <BsBag className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 
                                         text-normal z-20 text-[#222] group-hover/bag:text-white transition-colors 
                                         duration-300" />
@@ -52,13 +54,12 @@ const ZoomImage = ({src,alt,cate_name,originalPrice,maxPrice,discountedPrice, is
                 <img
                     src={src}
                     alt={alt}
-                    // layout="fill"
                     className="w-full h-full max-w-[280px] object-cover mb-2 max-h-[280px] 
                                 lg:max-h-[300px] transition-transform duration-300 group-hover/image_item:scale-110 cursor-pointer"
                 />            
                 <div className="grid grid-rows-[auto_auto_auto] items-center justify-start gap-1 pt-2 w-full">
                     <h4 className="text-[12px] lg:text-sm font-normal text-left 
-                                bg-[#222] text-gray-200 row-span-1 px-2 py-1">
+                                bg-[#222] text-gray-200 row-span-1 px-2 py-1 w-fit">
                         {cate_name}
                     </h4>
                     <h3 className="text-sm lg:text-base font-normal text-left row-span-1">{alt}</h3>

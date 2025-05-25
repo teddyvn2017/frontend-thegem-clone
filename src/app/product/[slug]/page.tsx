@@ -1,15 +1,38 @@
 'use client'
+import { useEffect } from 'react';
 import { useParams } from 'next/navigation';
 import { FaFacebookF, FaInstagram, FaTwitter } from "react-icons/fa";
 import React, { useState } from 'react';
 import { TiStarFullOutline } from "react-icons/ti";
 import { FaStarHalf } from "react-icons/fa";
 import { motion } from 'framer-motion';
+import ZoomImage from '../../components/new_products/ZoomImage';
+import HoverChangeImage from '../../components/new_products/HoverChangeImage';
+import Link from 'next/link';
+
+interface Product {
+    id: number;
+    name: string;
+    category: string;
+    originalPrice?: number;
+    discountedPrice?: number;
+    discountPercent?: number;
+    image: string;
+    imageHover?: string;
+    hoverEffect?: string;
+    hoverImage?: string;
+    tag: string;
+    isNew?: boolean;
+    slug:string;
+} 
+
 const ProductDetail = () => {
     const params = useParams();
     const slug = params.slug;
     const [activeTab, setActiveTab] = useState('description');
     const [quantity, setQuantity] = useState(1);
+    const [alsoLike, setAlsoLike] = useState<Product[]>([]);
+    const [imgFolder, setImgFolder] = useState('tab-on-sale');
 
     const tabs = [
         { id: 'description', label: 'DESCRIPTION' },
@@ -17,11 +40,17 @@ const ProductDetail = () => {
         { id: 'reviews', label: 'REVIEWS' },
     ];
 
+
+    useEffect(() => {
+        fetch('/data/on_sale.json')
+        .then((res) => res.json())
+        .then((data) => setAlsoLike(data.slice(0, 6))) // Lấy 4 phần tử đầu tiên
+        .catch((err) => console.error('Lỗi khi load JSON:', err));
+    }, []);
     const handleQuantityChange = (event: React.ChangeEvent<HTMLInputElement>) => {
         const newQuantity = parseInt(event.target.value, 10);
         setQuantity(newQuantity);
     }
-
 
     const handleTabClick = (tab:string) => {
         setActiveTab(tab);
@@ -255,22 +284,71 @@ Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu 
 
                     {/* form submit review */}
                     <div className='w-full lg:w-1/2'>
-                        <h2 className='text-2xl uppercase font-light'>Add a review</h2>
-                        <div>
-                            <ul>
-                                <li>
+                        <h2 className='text-xl uppercase font-light'>Add a review</h2>
+                        <div className='mt-4'>
+                            <ul className='flex flex-col items-start gap-4'>
+                                <li className='text-gray-600 text-base lg:text-sm'>
                                     Your rating *
                                 </li>
-                                <li>*****</li>
+                                <li className='flex flex-row items-center gap-2 text-gray-600'>
+                                    <TiStarFullOutline />
+                                    <TiStarFullOutline />
+                                    <TiStarFullOutline />
+                                    <TiStarFullOutline />
+                                    <TiStarFullOutline />
+                                </li>
                             </ul>
-                            <ul>
-                                <li>
+                            <ul className='mt-4 flex flex-col items-start gap-4'>
+                                <li className='text-gray-600 text-base lg:text-sm'>
                                     Your review *
                                 </li>
-                                <li>
-                                    <textarea name="customer_review" id="customer_review"></textarea>
+                                <li className='w-full lg:w-3/4'>
+                                    <textarea 
+                                        className='w-full border border-gray-300 p-2 h-[80px] lg:h-[100px]'
+                                        name="customer_review" id="customer_review"></textarea>
                                 </li>
                             </ul>
+                            <ul className='mt-4 flex flex-col items-start gap-4'>
+                                <li className='text-gray-600 text-base lg:text-sm'>
+                                    Name *
+                                </li>
+                                <li className='w-full lg:w-3/4'>
+                                    <input 
+                                        className='w-full border border-gray-300 py-1'
+                                        type="text" name="full_name" id="full_name" />
+                                </li>
+                            </ul>
+                            <ul className='mt-4 flex flex-col items-start gap-4'>
+                                <li className='text-gray-600 text-base lg:text-sm'>
+                                    Email
+                                </li>
+                                <li className='w-full lg:w-3/4'>
+                                    <input 
+                                        className='w-full border border-gray-300 py-1'
+                                        type="email" name="email" id="email" />
+                                </li>
+                            </ul>
+
+                            <ul className='mt-4 flex flex-row items-center gap-2'>
+                                <li>
+                                   <input 
+                                        className='w-5 h-5  bg-gray-300 border-gray-300 rounded'
+                                        type="checkbox" name="save_my_name" id="save_my_name" />
+                                </li>
+                                <li className='w-full text-sm text-gray-700'>
+                                    Save my name, email, and website in this browser for the next time I comment.
+                                </li>
+                            </ul> 
+
+                             <ul className='mt-6 flex flex-row items-center gap-2'>
+                                <li>
+                                    <button 
+                                        className='bg-[#222] text-white py-2 px-6 
+                                        hover:bg-[#333] hover:text-white transition-colors duration-300  
+                                        font-semibold text-sm rounded-full'>Submit Review</button>
+                                </li>
+                                
+                            </ul>                           
                         </div>
                         
                     </div>
@@ -278,8 +356,67 @@ Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu 
             )}
 
             {/* You may also like */}
-            <div className='mt-16 flex flex-col md:flex-row gap-8 lg:gap-16'>
+            <div>
+                <h2 className='text-2xl font-bold text-[#222] text-center mt-10'>You May Also Like</h2>
+                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 
+                            gap-x-8 gap-y-12
+                            mt-8 mb-8 mx-auto px-8 lg:px-16 items-center justify-center">
+                {
+                    alsoLike.map((product) => {
 
+                        const imageProps = {
+                            src: `/img/tab-on-sale/${product.image}`,
+                            alt: product.name,
+                            cate_name: product.category,
+                            originalPrice: product.originalPrice ?? 0,
+                            discountedPrice: product.discountedPrice ?? 0,
+                            isNew: product.isNew ?? false,
+                            slug: product.slug
+                        };
+
+                        return (
+                            <Link href={`/product/${product.slug}`} key={product.id}>
+                            {
+                                product.hoverEffect === 'changeImage' && product.imageHover
+                                ? <HoverChangeImage {...imageProps} hoverSrc={`/img/tab-on-sale/${product.imageHover}`} />
+                                : <ZoomImage {...imageProps} />
+                            }
+                            </Link>
+                        );
+                    })
+                }     
+                </div>
+            </div>
+            <div>
+                <h2 className='text-2xl font-bold text-[#222] text-center mt-10'>Related Products</h2>
+                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 
+                            gap-x-8 gap-y-12
+                            mt-8 mb-8 mx-auto px-8 lg:px-16 items-center justify-center">
+                {
+                    alsoLike.map((product) => {
+
+                        const imageProps = {
+                            src: `/img/tab-on-sale/${product.image}`,
+                            alt: product.name,
+                            cate_name: product.category,
+                            originalPrice: product.originalPrice ?? 0,
+                            discountedPrice: product.discountedPrice ?? 0,
+                            isNew: product.isNew ?? false,
+                            slug: product.slug
+                        };
+
+                        return (
+                            <Link href={`/product/${product.slug}`} key={product.id}>
+                            {
+                                product.hoverEffect === 'changeImage' && product.imageHover
+                                ? <HoverChangeImage {...imageProps} hoverSrc={`/img/tab-on-sale/${product.imageHover}`} />
+                                : <ZoomImage {...imageProps} />
+                            }
+                            </Link>
+                        );
+                    })
+                }     
+                </div>
             </div>
         </div>
 

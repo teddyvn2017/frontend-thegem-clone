@@ -7,7 +7,7 @@ const Footer = () => {
   	return (
     	<footer className='w-full mt-10 lg:mt-30 bg-[#222]'>
 			<div className='px-8 lg:px-16 py-8'>				
-				<div className='flex flex-col md:flex-row gap-8 md:gap-16 flex-wrap'>
+				<div className='flex flex-col md:flex-row gap-8 lg:gap-12 flex-wrap'>
 					{/* Logo */}
 
 					<div className='flex flex-col gap-4 min-w-[220px] text-white text-sm'>
@@ -17,12 +17,12 @@ const Footer = () => {
 
 						<ul>
 							<li>Phone: +1 916-875-2235</li>
-							<li>Email: 6Bk9L@example.com</li>
+							<li>Email: 6Bk9L@example.com</li>	
 						</ul>						
 					</div>
 
 					{/* Information */}
-					<div className='flex flex-col gap-4 	min-w-[220px]'>
+					<div className='flex flex-col gap-4 min-w-[220px]'>
 						<h3 className='text-white font-semibold text-xl'>Information</h3>
 						<ul className='flex flex-col gap-2 text-white list-disc text-base pl-4'>
 							<li className='hover:text-gray-300 transition-colors duration-300'>

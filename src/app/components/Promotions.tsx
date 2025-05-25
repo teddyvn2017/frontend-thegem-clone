@@ -20,7 +20,6 @@ interface Product {
     slug:string;
 }   
 
-
 const Promotions = () => {
 
     const [activeTab, setActiveTab] = useState('tab-on-sale');
@@ -154,7 +153,7 @@ const Promotions = () => {
                         }
                     })
                 }     
-           </div>
+            </div>
         </section>
     )
 }
